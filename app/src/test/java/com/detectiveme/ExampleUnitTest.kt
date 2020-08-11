@@ -1,4 +1,4 @@
-package com.example.detectiveme
+package com.detectiveme
 
 import org.junit.Test
 

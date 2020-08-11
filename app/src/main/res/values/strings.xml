@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">DetectiveMe</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="continue_arm">Շարունակել Հայերեն</string>
+    <string name="continue_ru">Продолжить на Русском</string>
+    <string name="continue_us">Continue in English</string>
+    <string name="professions">Professions</string>
+    <string name="places">Places</string>
+    <string name="animals">Animals</string>
+    <string name="rules">Rules</string>
+    <string name="choose">Choose</string>
+    <string name="word_list">Word List</string>
 </resources>
