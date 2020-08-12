@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DetectiveMe</string>
+    <string name="professions">Մասնագիտություններ</string>
+    <string name="places">Տեղանուններ</string>
+    <string name="animals">Կենդանիներ</string>
+    <string name="rules">Կանոններ</string>
+    <string name="choose">Ընտրեք</string>
+    <string name="word_list">Բառացանկը</string>
+    <string name="player_count">Մասնակիցների քանակը</string>
+    <string name="total_players">Ընդհանուր մասնակիցները</string>
+    <string name="spies_from_total">"Դրանցից լրտեսները "</string>
+    <string name="time_minutes">Ժամանակը (Րոպե)</string>
+    <string name="start">Սկսել</string>
+    <string name="show">Բացել</string>
+    <string name="hide">Փակել</string>
+    <string name="spy">Լրտես</string>
+
+
+
+    <string-array name="animals">
+        <item>Ձի</item>
+        <item>Արծիվ</item>
+        <item>Շնաձուկ</item>
+        <item>Առյուծ</item>
+        <item>Օձ</item>
+        <item>Կատու</item>
+        <item>Շուն</item>
+        <item>Սարդ</item>
+        <item>Գայլ</item>
+        <item>Դինոզավր</item>
+        <item>Փիղ</item>
+        <item>Հովազ</item>
+        <item>Կռաբ</item>
+        <item>Առյուծ</item>
+        <item>Գորտ</item>
+        <item>Օրանգուտան</item>
+        <item>Կապիկ</item>
+    </string-array>
+
+    <string-array name="profs">
+        <item>Բժիշկ</item>
+        <item>Վարորդ</item>
+        <item>Տիեզերագնաց</item>
+        <item>Խոհարար</item>
+        <item>Ոստիկան</item>
+        <item>Ուսուցիչ</item>
+        <item>Դերասան</item>
+        <item>Ճարտարապետ</item>
+        <item>Երգիչ</item>
+        <item>Ատամնաբույժ</item>
+        <item>Դետեկտիվ</item>
+        <item>Գրող</item>
+        <item>Ֆերմեր</item>
+        <item>Օդաչու</item>
+        <item>Վարսահարդար</item>
+        <item>Լուսանկարիչ</item>
+        <item>Գիտնական</item>
+    </string-array>
+
+    <string-array name="places">
+        <item>Doctor</item>
+        <item>Driver</item>
+        <item>Astronaut</item>
+        <item>Chef</item>
+        <item>Police</item>
+        <item>Teacher</item>
+        <item>Actor</item>
+        <item>Architect</item>
+        <item>Singer</item>
+        <item>Dentist</item>
+        <item>Detective</item>
+        <item>Writer</item>
+        <item>Farmer</item>
+        <item>Pilot</item>
+        <item>Barber</item>
+        <item>Photographer</item>
+        <item>Scientist</item>
+    </string-array>
+    <string name="moreNumberErrorMessage">Լրտեսների քանակը պետք է քիչ լինի մասնակիցների քանակից</string>
+</resources>

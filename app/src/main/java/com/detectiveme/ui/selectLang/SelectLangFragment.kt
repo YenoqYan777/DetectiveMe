@@ -1,19 +1,26 @@
 package com.detectiveme.ui.selectLang
 
-import android.annotation.SuppressLint
-import android.graphics.PorterDuff
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.detectiveme.R
+import com.detectiveme.base.BaseFragment
+import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectLangBinding
+import com.detectiveme.util.buttonEffect
+import java.util.*
 
-class SelectLangFragment : Fragment() {
-    lateinit var binding: FragmentSelectLangBinding
+class SelectLangFragment : BaseFragment() {
+    private lateinit var binding: FragmentSelectLangBinding
+    private lateinit var viewModel: SelectLangViewModel
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -21,29 +28,51 @@ class SelectLangFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_select_lang, container, false
         )
-        buttonEffect(binding.btnLangArm)
-        buttonEffect(binding.btnLangRu)
-        buttonEffect(binding.btnLangUs)
 
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViewModel()
 
-    @SuppressLint("ClickableViewAccessibility")
-    fun buttonEffect(button: View) {
-        button.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    v.background.setColorFilter(-0x1f0b8adf, PorterDuff.Mode.SRC_ATOP)
-                    v.invalidate()
-                }
-                MotionEvent.ACTION_UP -> {
-                    v.background.clearColorFilter()
-                    v.invalidate()
-                }
-            }
-            false
+        onLangSelectedListener()
+    }
+
+    private fun initViewModel() {
+        viewModel = ViewModelProviders.of(this).get(SelectLangViewModel::class.java)
+
+    }
+
+    override fun getViewModel(): BaseViewModel = viewModel
+
+    private fun onLangSelectedListener() {
+        buttonEffect(binding.btnLangArm)
+        buttonEffect(binding.btnLangRu)
+        buttonEffect(binding.btnLangUs)
+
+        binding.btnLangArm.setOnClickListener {
+            setLocale("hy")
+
+        }
+        binding.btnLangRu.setOnClickListener {
+            setLocale("ru")
+        }
+        binding.btnLangUs.setOnClickListener {
+            setLocale("en")
         }
     }
 
+
+    private fun setLocale(lang: String?) {
+        val myLocale = Locale(lang)
+        val res: Resources = resources
+        val dm: DisplayMetrics = res.displayMetrics
+        val conf: Configuration = res.configuration
+        conf.locale = myLocale
+        res.updateConfiguration(conf, dm)
+        viewModel.navigate(
+            SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
+        )
+    }
 }

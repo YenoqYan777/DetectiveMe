@@ -9,15 +9,71 @@
         android:id="@+id/selectLangFragment"
         android:name="com.detectiveme.ui.selectLang.SelectLangFragment"
         android:label="fragment_select_lang"
-        tools:layout="@layout/fragment_select_lang" >
+        tools:layout="@layout/fragment_select_lang">
         <action
             android:id="@+id/action_selectLangFragment_to_selectTypeFragment"
             app:destination="@id/selectTypeFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
+            app:enterAnim="@anim/anim_in_left"
+            app:exitAnim="@anim/right_to_left"
+            app:popExitAnim="@anim/anim_slide_out_right"
+            app:popUpTo="@id/selectTypeFragment" />
     </fragment>
     <fragment
         android:id="@+id/selectTypeFragment"
         android:name="com.detectiveme.ui.selectType.SelectTypeFragment"
         android:label="fragment_select_type"
-        tools:layout="@layout/fragment_select_type" />
+        tools:layout="@layout/fragment_select_type">
+        <action
+            android:id="@+id/action_selectTypeFragment_to_playerCountFragment"
+            app:destination="@id/playerCountFragment"
+            app:enterAnim="@anim/anim_in_left"
+            app:exitAnim="@anim/right_to_left"
+            app:popExitAnim="@anim/anim_slide_out_right" />
+
+        <action
+            android:id="@+id/action_selectTypeFragment_to_viewRulesFragment"
+            app:destination="@id/viewRulesFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/playerCountFragment"
+        android:name="com.detectiveme.ui.playerCount.PlayerCountFragment"
+        android:label="fragment_player_count"
+        tools:layout="@layout/fragment_player_count">
+        <action
+            android:id="@+id/action_playerCountFragment_to_roleCheckerFragment"
+            app:destination="@id/roleCheckerFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down"
+            app:popEnterAnim="@anim/slide_up"
+            app:popExitAnim="@anim/slide_down" />
+        <argument
+            android:name="wordList"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/roleCheckerFragment"
+        android:name="com.detectiveme.ui.roleChecker.RoleCheckerFragment"
+        android:label="RoleCheckerFragment">
+
+        <argument
+            android:name="wordList"
+            app:argType="string" />
+        <argument
+            android:name="players"
+            app:argType="integer[]" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/viewRulesFragment"
+        android:name="com.detectiveme.ui.viewRules.ViewRulesFragment"
+        android:label="fragment_view_rules"
+        tools:layout="@layout/fragment_view_rules" />
 </navigation>

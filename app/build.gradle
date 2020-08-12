@@ -1,9 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId "com.detectiveme"
@@ -43,4 +48,13 @@ dependencies {
     //Motion Layout
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-rc1'
 
+    //ViewModel
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    implementation "android.arch.lifecycle:viewmodel:1.1.1"
+    implementation 'com.google.android.material:material:1.2.0'
+
+    //Navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
 }

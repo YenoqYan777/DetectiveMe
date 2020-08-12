@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DetectiveMe</string>
+    <string name="start">Начать</string>
+    <string name="time_minutes">Время (минуты)</string>
+    <string name="show">Показать</string>
+    <string name="hide">Скрыть</string>
+    <string name="total_players">Всего участиков</string>
+    <string name="spies_from_total">Всего шпионов из общих</string>
+    <string name="player_count">Число участников</string>
+    <string name="word_list">Cловарный состав</string>
+    <string name="choose">Выберите</string>
+    <string name="rules">Правила</string>
+    <string name="animals">Животные</string>
+    <string name="places">Места</string>
+    <string name="professions">Профессии</string>
+    <string name="spy">Шпион</string>
+
+
+    <string-array name="animals">
+        <item>Лошадь</item>
+        <item>Орел</item>
+        <item>Акула</item>
+        <item>Лев</item>
+        <item>Змея</item>
+        <item>Кот</item>
+        <item>Собака</item>
+        <item>Паук</item>
+        <item>Волк</item>
+        <item>Динозавр </item>
+        <item>Слон</item>
+        <item>Пантера</item>
+        <item>Краб</item>:
+        <item>Лев</item>
+        <item>Лягушка</item>
+        <item>Орангутанг</item>
+        <item>Обезьяна</item>
+    </string-array>
+
+    <string-array name="profs">
+        <item>Врач</item>
+        <item>Водитель</item>:
+        <item>Астронавт</item>
+        <item>Повор</item>
+        <item>Полицейский</item>
+        <item>Учитель</item>
+        <item>Актер</item>
+        <item>Архитектор</item>
+        <item>Певец</item>:
+        <item>Стоматолог</item>
+        <item>Детектив</item>
+        <item>Писатель</item>
+        <item>Фермер</item>
+        <item>Пилот</item>:
+        <item>Парикмахер</item>:
+        <item>Фотограф</item>
+        <item>Ученый</item>
+    </string-array>
+
+    <string-array name="places">
+        <item>Doctor</item>
+        <item>Driver</item>
+        <item>Astronaut</item>
+        <item>Chef</item>
+        <item>Police</item>
+        <item>Teacher</item>
+        <item>Actor</item>
+        <item>Architect</item>
+        <item>Singer</item>
+        <item>Dentist</item>
+        <item>Detective</item>
+        <item>Writer</item>
+        <item>Farmer</item>
+        <item>Pilot</item>
+        <item>Barber</item>
+        <item>Photographer</item>
+        <item>Scientist</item>
+    </string-array>
+    <string name="moreNumberErrorMessage">Число шпионов должен быть меньше чем число участников</string>
+</resources>

@@ -1,13 +1,86 @@
 <resources>
     <string name="app_name">DetectiveMe</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="continue_arm">Շարունակել Հայերեն</string>
-    <string name="continue_ru">Продолжить на Русском</string>
-    <string name="continue_us">Continue in English</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="continue_arm" translatable="false">Շարունակել Հայերեն</string>
+    <string name="continue_ru" translatable="false">Продолжить на Русском</string>
+    <string name="continue_us" translatable="false">Continue in English</string>
     <string name="professions">Professions</string>
     <string name="places">Places</string>
     <string name="animals">Animals</string>
     <string name="rules">Rules</string>
     <string name="choose">Choose</string>
     <string name="word_list">Word List</string>
+    <string name="player_count">Player Count</string>
+    <string name="total_players">Total Players</string>
+    <string name="spies_from_total">Spies from total</string>
+    <string name="time_minutes">Time (Minutes)</string>
+    <string name="start">Start</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="spy">Spy</string>
+    <string name="moreNumberErrorMessage">Spies should be less than total players</string>
+
+
+    <string-array name="animals">
+        <item>Horse</item>
+        <item>Eagle</item>
+        <item>Shark</item>
+        <item>Tiger</item>
+        <item>Snake</item>
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Spider</item>
+        <item>Wolf</item>
+        <item>Dinosaur</item>
+        <item>Elephant</item>
+        <item>Leopard</item>
+        <item>Crab</item>
+        <item>Lion</item>
+        <item>Frog</item>
+        <item>Orangutan</item>
+        <item>Monkey</item>
+    </string-array>
+
+    <string-array name="profs">
+        <item>Doctor</item>
+        <item>Driver</item>
+        <item>Astronaut</item>
+        <item>Chef</item>
+        <item>Police</item>
+        <item>Teacher</item>
+        <item>Actor</item>
+        <item>Architect</item>
+        <item>Singer</item>
+        <item>Dentist</item>
+        <item>Detective</item>
+        <item>Writer</item>
+        <item>Farmer</item>
+        <item>Pilot</item>
+        <item>Barber</item>
+        <item>Photographer</item>
+        <item>Scientist</item>
+    </string-array>
+
+    <string-array name="places">
+        <item>Doctor</item>
+        <item>Driver</item>
+        <item>Astronaut</item>
+        <item>Chef</item>
+        <item>Police</item>
+        <item>Teacher</item>
+        <item>Actor</item>
+        <item>Architect</item>
+        <item>Singer</item>
+        <item>Dentist</item>
+        <item>Detective</item>
+        <item>Writer</item>
+        <item>Farmer</item>
+        <item>Pilot</item>
+        <item>Barber</item>
+        <item>Photographer</item>
+        <item>Scientist</item>
+    </string-array>
+
+
+
 </resources>
