@@ -1,6 +1,5 @@
 package com.detectiveme.ui.playerCount
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +21,6 @@ class PlayerCountFragment : BaseFragment() {
         ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
     }
     private val args: PlayerCountFragmentArgs by navArgs()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,6 +39,7 @@ class PlayerCountFragment : BaseFragment() {
         onButtonsClickedListener()
     }
 
+
     private fun onButtonsClickedListener() {
         buttonEffect(binding.btnBack)
         binding.btnBack.setOnClickListener {
@@ -48,7 +47,7 @@ class PlayerCountFragment : BaseFragment() {
         }
 
         binding.btnStart.setOnClickListener {
-            if (numTotalPlayers.text.toString().toInt() < numFakePlayers.text.toString().toInt()) {
+            if (numTotalPlayers.text.toString().toInt() <= numFakePlayers.text.toString().toInt()) {
                 Toast.makeText(
                     requireContext(),
                     requireActivity().resources.getString(R.string.moreNumberErrorMessage),
@@ -67,7 +66,6 @@ class PlayerCountFragment : BaseFragment() {
                     )
                 )
             }
-
         }
 
         binding.btnAddTotal.setOnClickListener {

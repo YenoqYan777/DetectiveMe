@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "636783563492",
+    "firebase_url": "https://detectiveme-efa3c.firebaseio.com",
+    "project_id": "detectiveme-efa3c",
+    "storage_bucket": "detectiveme-efa3c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636783563492:android:99657262674e6b0dde12f1",
+        "android_client_info": {
+          "package_name": "com.detectiveme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636783563492-rgit1dfb5dus963tsm1dt0e6pl11af4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQSpqdN1bnL90xR6XwmaIcsLUu-YSBSjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636783563492-rgit1dfb5dus963tsm1dt0e6pl11af4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,15 @@
 package com.detectiveme.util
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.graphics.PorterDuff
+import android.util.DisplayMetrics
 import android.view.MotionEvent
 import android.view.View
+import com.detectiveme.ui.selectLang.SelectLangFragmentDirections
+import java.util.*
 
 @SuppressLint("ClickableViewAccessibility")
 fun buttonEffect(button: View) {
@@ -20,4 +26,15 @@ fun buttonEffect(button: View) {
         }
         false
     }
+}
+
+
+fun setLocale(lang: String?, context: Context) {
+    val myLocale = Locale(lang)
+    val res: Resources = context.resources
+    val dm: DisplayMetrics = res.displayMetrics
+    val conf: Configuration = res.configuration
+    conf.locale = myLocale
+    res.updateConfiguration(conf, dm)
+
 }

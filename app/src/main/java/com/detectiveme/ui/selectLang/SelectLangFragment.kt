@@ -1,9 +1,6 @@
 package com.detectiveme.ui.selectLang
 
-import android.content.res.Configuration
-import android.content.res.Resources
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +11,7 @@ import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectLangBinding
 import com.detectiveme.util.buttonEffect
-import java.util.*
+import com.detectiveme.util.setLocale
 
 class SelectLangFragment : BaseFragment() {
     private lateinit var binding: FragmentSelectLangBinding
@@ -52,27 +49,21 @@ class SelectLangFragment : BaseFragment() {
         buttonEffect(binding.btnLangUs)
 
         binding.btnLangArm.setOnClickListener {
-            setLocale("hy")
-
+            setLocale("hy", requireContext())
+            lang = "hy"
+            viewModel.navigate(SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment())
         }
         binding.btnLangRu.setOnClickListener {
-            setLocale("ru")
+            setLocale("ru", requireContext())
+            lang = "ru"
+            viewModel.navigate(SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment())
         }
         binding.btnLangUs.setOnClickListener {
-            setLocale("en")
+            setLocale("en", requireContext())
+            lang = "en"
+            viewModel.navigate(SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment())
         }
     }
 
 
-    private fun setLocale(lang: String?) {
-        val myLocale = Locale(lang)
-        val res: Resources = resources
-        val dm: DisplayMetrics = res.displayMetrics
-        val conf: Configuration = res.configuration
-        conf.locale = myLocale
-        res.updateConfiguration(conf, dm)
-        viewModel.navigate(
-            SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
-        )
-    }
 }

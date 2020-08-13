@@ -10,7 +10,9 @@ import com.detectiveme.util.NavigationCommand
 
 abstract class BaseFragment : Fragment() {
     abstract fun getViewModel(): BaseViewModel
-
+    companion object{
+        var lang = "en"
+    }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         observeNavigation(getViewModel())
