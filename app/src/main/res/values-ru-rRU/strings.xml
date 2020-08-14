@@ -35,53 +35,148 @@
         <item>Лягушка</item>
         <item>Орангутанг</item>
         <item>Обезьяна</item>
+        <item>Գառ</item>
+        <item>Կով</item>
+        <item>Հնդկահավ</item>
+        <item>Ուղտ</item>
+        <item>Այծ</item>
+        <item>Փոկ</item>
+        <item>Դելֆին</item>
+        <item>Ծովաձի</item>
+        <item>Խխունջ</item>
+        <item>Բազե</item>
+        <item>Աղավնի</item>
+        <item>Պինգվին</item>
+        <item>Խավարասեր</item>
+        <item>Մեղու</item>
+        <item>Խող</item>
+        <item>Թութակ</item>
+        <item>Զեբր</item>
+        <item>Ավանակ</item>
+        <item>Ընձուղտ</item>
+        <item>Ֆլամինգո</item>
+        <item>Պանդա</item>
+        <item>Կենգուրու</item>
+        <item>Վագր</item>
+        <item>Նապաստակ</item>
+        <item>Աղվես</item>
+        <item>Արջ</item>
+        <item>Հովազ</item>
+        <item>Մամոնտ</item>
+        <item>Ջայլամ</item>
+        <item>Ռնգեղջուր</item>
     </string-array>
 
     <string-array name="profs">
         <item>Врач</item>
-        <item>Водитель</item>:
+        <item>Водитель</item>
         <item>Астронавт</item>
         <item>Повор</item>
         <item>Полицейский</item>
         <item>Учитель</item>
         <item>Актер</item>
         <item>Архитектор</item>
-        <item>Певец</item>:
+        <item>Певец</item>
         <item>Стоматолог</item>
         <item>Детектив</item>
         <item>Писатель</item>
         <item>Фермер</item>
-        <item>Пилот</item>:
-        <item>Парикмахер</item>:
+        <item>Пилот</item>
+        <item>Парикмахер</item>
         <item>Фотограф</item>
         <item>Ученый</item>
+        <item> Танцовщица </item>
+        <item> Певец </item>
+        <item> Массажер </item>
+        <item> Клоун </item>
+        <item> Проститутка </item>
+        <item> Ювелир </item>
+        <item> Продавец </item>
+        <item> Тренер </item>
+        <item> Духовный </item>
+        <item> Блогеры </item>
+        <item> Медсестра </item>
+        <item> Винодел </item>
+        <item> Дизайнер </item>
+        <item> Дизайнер </item>
+        <item> Маникюрщица </item>
+        <item> Маркетолог </item>
+        <item> Юрист </item>
+        <item> Финансист </item>
+        <item> Психолог </item>
+        <item> Физик </item>
+        <item> Химик </item>
+        <item> Математик </item>
+        <item> Модель </item>
+        <item> Юморист </item>
+        <item> Բանոր </item>
+        <item> Кузнец </item>
+        <item> Футболист </item>
+        <item> Баскетболист </item>
+        <item> Актер </item>
+        <item> Маг </item>
+        <item> Танцовщица </item>
+        <item> Журналист </item>
+        <item> Ведущий </item>
+        <item> Футбольный комментатор </item>
     </string-array>
+    :
 
     <string-array name="places">
-        <item>Doctor</item>
-        <item>Driver</item>
-        <item>Astronaut</item>
-        <item>Chef</item>
-        <item>Police</item>
-        <item>Teacher</item>
-        <item>Actor</item>
-        <item>Architect</item>
-        <item>Singer</item>
-        <item>Dentist</item>
-        <item>Detective</item>
-        <item>Writer</item>
-        <item>Farmer</item>
-        <item>Pilot</item>
-        <item>Barber</item>
-        <item>Photographer</item>
-        <item>Scientist</item>
+        <item> Церковь </item>
+        <item> Двор </item>
+        <item> Школа </item>
+        <item> Гостиница </item>
+        <item> Коттедж </item>
+        <item> За границей </item>
+        <item> Детский сад </item>
+        <item> Библиотека </item>
+        <item> Балкон </item>
+        <item> Гора </item>
+        <item> Озеро </item>
+        <item> Река </item>
+        <item> Пляж </item>
+        <item> Остров </item>
+        <item> Бассейн </item>
+        <item> Подвал </item>
+        <item> Ванная </item>
+        <item> Джунгли </item>
+        <item> Монастырь </item>
+        <item> Учитель </item>
+        <item> Кафе </item>
+        <item> Цирк </item>
+        <item> Лифт </item>
+        <item> Зоопарк </item>
+        <item> Диснейленд </item>
+        <item> Здание </item>
+        <item> Магазин </item>
+        <item> Аптека </item>
+        <item> Ресторан </item>
+        <item> Кино </item>
+        <item> Театр </item>
+        <item> Поле </item>
+        <item> Футбольное поле </item>
+        <item> Банк </item>
+        <item> Тюрьма </item>
+        <item> Полиция </item>
+        <item> Больница </item>
+        <item> Холл </item>
+        <item> Университет </item>
+        <item> Торговый центр </item>
+        <item> Деревня </item>
+        <item> Город </item>:
+        <item> Автовокзал </item>:
+        <item> Стадион </item>:
+        <item> Париж </item>:
+        <item> Лондон </item>:
+        <item> Нью-Йорк </item>
     </string-array>
     <string name="moreNumberErrorMessage">Число шпионов должно быть меньше чем число участников</string>
     <string name="finish">Конец</string>
     <string name="start_timer">Начать таймер</string>
     <string name="stop_timer">Закончить</string>
 
-    <string name="rulesFull">«Детективная игра» - веселая, занимательная игра, в которую удобно играть во время дружеских встреч.
+    <string name="rulesFull">«Detective Game» - веселая, занимательная игра, в которую удобно играть во время дружеских встреч.
 Введите количество игроков և продолжительность игры, нажмите «Старт». Затем, по очереди, каждый игрок берет трубку, нажимает «показать», смотрит на слово, нажимает «скрыть», передает телефон другому игроку и так далее, пока все не услышат слово. Затем нажмите «время начала».
 Каждый раз программа показывает игрокам слово из выбранного словаря. У всех одно и то же слово, кроме одного, вместо которого используется слово «шпион». Затем игроки пытаются выяснить, кто такой шпион, задавая друг другу вопросы, и во время этих вопросов и ответов шпион пытается угадать слово. Как только время истекает, начинается голосование, все держат руки вверх, через 3 секунды все одновременно указывают на игрока, которого подозревают в шпионаже. Если игроки правильно нашли шпиона в результате голосования, шпион проигрывает. В случае ошибочного голосования побеждает шпион. После голосования игра заканчивается.
 Если во время игры шпион угадает слово, он может просто сказать слово и в любой момент выиграть. В случае объявления неправильного слова он проиграет.

@@ -36,6 +36,36 @@
         <item>Գորտ</item>
         <item>Օրանգուտան</item>
         <item>Կապիկ</item>
+        <item>Գառ</item>
+        <item>Կով</item>
+        <item>Հնդկահավ</item>
+        <item>Ուղտ</item>
+        <item>Այծ</item>
+        <item>Փոկ</item>
+        <item>Դելֆին</item>
+        <item>Ծովաձի</item>
+        <item>Խխունջ</item>
+        <item>Բազե</item>
+        <item>Աղավնի</item>
+        <item>Պինգվին</item>
+        <item>Խավարասեր</item>
+        <item>Մեղու</item>
+        <item>Խող</item>
+        <item>Թութակ</item>
+        <item>Զեբր</item>
+        <item>Ավանակ</item>
+        <item>Ընձուղտ</item>
+        <item>Ֆլամինգո</item>
+        <item>Պանդա</item>
+        <item>Կենգուրու</item>
+        <item>Վագր</item>
+        <item>Նապաստակ</item>
+        <item>Աղվես</item>
+        <item>Արջ</item>
+        <item>Հովազ</item>
+        <item>Մամոնտ</item>
+        <item>Ջայլամ</item>
+        <item>Ռնգեղջուր</item>
     </string-array>
 
     <string-array name="profs">
@@ -56,26 +86,90 @@
         <item>Վարսահարդար</item>
         <item>Լուսանկարիչ</item>
         <item>Գիտնական</item>
+        <item>Պարուհի</item>
+        <item>Երգիչ</item>
+        <item>Մերսող</item>
+        <item>Ծաղրածու</item>
+        <item>Մարմնավաճառ</item>
+        <item>Ոսկերիչ</item>
+        <item>Վաճառող</item>
+        <item>Մարզիչ</item>
+        <item>Հոգևորական</item>
+        <item>Բլոգգեր</item>
+        <item>Բուժքույր</item>
+        <item>Գինեգործ</item>
+        <item>Դիզայներ</item>
+        <item>Դիմահարդար</item>
+        <item>Մատնահարդար</item>
+        <item>Մարքեթոլոգ</item>
+        <item>Իրավաբան</item>
+        <item>Ֆինանսիստ</item>
+        <item>Հոգեբան</item>
+        <item>Ֆիզիկոս</item>
+        <item>Քիմիկոս</item>
+        <item>Մաթեմատիկոս</item>
+        <item>Մոդել</item>
+        <item>Հումորիստ</item>
+        <item>Բանոր</item>
+        <item>Դարբին</item>
+        <item>Ֆուտբոլիստ</item>
+        <item>Բասկետբոլիստ</item>
+        <item>Դերասան</item>
+        <item>Աճպարար</item>
+        <item>Պարուհի</item>
+        <item>Լրագրող</item>
+        <item>Հաղորդավար</item>
+        <item>Ֆուտբոլային մեկնաբան</item>
     </string-array>
 
     <string-array name="places">
-        <item>Doctor</item>
-        <item>Driver</item>
-        <item>Astronaut</item>
-        <item>Chef</item>
-        <item>Police</item>
-        <item>Teacher</item>
-        <item>Actor</item>
-        <item>Architect</item>
-        <item>Singer</item>
-        <item>Dentist</item>
-        <item>Detective</item>
-        <item>Writer</item>
-        <item>Farmer</item>
-        <item>Pilot</item>
-        <item>Barber</item>
-        <item>Photographer</item>
-        <item>Scientist</item>
+        <item>Եկեղեցի</item>
+        <item>Բակ</item>
+        <item>Դպրոց</item>
+        <item>Հյուրանոց</item>
+        <item>Ամառանոց</item>
+        <item>Արտասահման</item>
+        <item>Մանկապարտեզ</item>
+        <item>Գրադարան</item>
+        <item>Պատշգամբ</item>
+        <item>Սար</item>
+        <item>Լիճ</item>
+        <item>Գետ</item>
+        <item>Ծովափ</item>
+        <item>Կղզի</item>
+        <item>Լողավազան</item>
+        <item>Նկուղ</item>
+        <item>Լոգարան</item>
+        <item>Ջունգլի</item>
+        <item>Վանք</item>
+        <item>Ուսուցչանոց</item>
+        <item>Սրճարան</item>
+        <item>Կրկես</item>
+        <item>Վերելակ</item>
+        <item>Կենդանաբանական այգի</item>
+        <item>Դիսնեյլենդ</item>
+        <item>Շենք</item>
+        <item>Խանութ</item>
+        <item>Դեղատուն</item>
+        <item>Ռեստորան</item>
+        <item>Կինոթատրոն</item>
+        <item>Թատրոն</item>
+        <item>Դաշտ</item>
+        <item>Ֆուտբոլի դաշտ</item>
+        <item>Բանկ</item>
+        <item>Բանտ</item>
+        <item>Ոստիկանություն</item>
+        <item>Հիվանդանոց</item>
+        <item>Դահլիճ</item>
+        <item>Համալսարան</item>
+        <item>Առևտրի կենտրեն</item>
+        <item>Գյուղ</item>
+        <item>Քաղաք</item>
+        <item>Ավտոկայան</item>
+        <item>Մարզադաշտ</item>
+        <item>Փարիզ</item>
+        <item>Լոնդոն</item>
+        <item>Նյու Յորք</item>
     </string-array>
     <string name="moreNumberErrorMessage">Լրտեսների քանակը պետք է քիչ լինի մասնակիցների քանակից</string>
     <string name="finish">Ավարտ</string>
