@@ -10,7 +10,6 @@ import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectLangBinding
-import com.detectiveme.util.buttonEffect
 import com.detectiveme.util.setLocale
 
 class SelectLangFragment : BaseFragment() {
@@ -44,9 +43,6 @@ class SelectLangFragment : BaseFragment() {
     override fun getViewModel(): BaseViewModel = viewModel
 
     private fun onLangSelectedListener() {
-        buttonEffect(binding.btnLangArm)
-        buttonEffect(binding.btnLangRu)
-        buttonEffect(binding.btnLangUs)
 
         binding.btnLangArm.setOnClickListener {
             setLocale("hy", requireContext())

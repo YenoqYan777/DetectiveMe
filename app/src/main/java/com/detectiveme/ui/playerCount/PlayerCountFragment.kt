@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentPlayerCountBinding
-import com.detectiveme.util.buttonEffect
 import kotlinx.android.synthetic.main.fragment_player_count.*
 
 class PlayerCountFragment : BaseFragment() {
@@ -28,20 +28,35 @@ class PlayerCountFragment : BaseFragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_player_count, container, false
         )
+        binding.viewModel = viewModel
+
         return binding.root
     }
-
 
     override fun getViewModel(): BaseViewModel = viewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onButtonsClickedListener()
+        initViewModel()
+    }
+
+    private fun initViewModel() {
+        viewModel.totalPlayer.observe(viewLifecycleOwner, Observer {
+            numTotalPlayers.text = it.toString()
+        })
+        viewModel.totalSpies.observe(viewLifecycleOwner, Observer {
+            numFakePlayers.text = it.toString()
+        })
+
+        viewModel.totalMins.observe(viewLifecycleOwner, Observer {
+            numMinutes.text = it.toString()
+        })
+
     }
 
 
     private fun onButtonsClickedListener() {
-        buttonEffect(binding.btnBack)
         binding.btnBack.setOnClickListener {
             viewModel.navigateBack()
         }
@@ -68,36 +83,22 @@ class PlayerCountFragment : BaseFragment() {
             }
         }
 
-        binding.btnAddTotal.setOnClickListener {
-            binding.numTotalPlayers.text = (numTotalPlayers.text.toString().toInt() + 1).toString()
-        }
-
-        binding.btnAddFake.setOnClickListener {
-            binding.numFakePlayers.text = (numFakePlayers.text.toString().toInt() + 1).toString()
-        }
-
-        binding.btnAddMinute.setOnClickListener {
-            binding.numMinutes.text = (numMinutes.text.toString().toInt() + 1).toString()
-        }
-
         binding.btnMinusTotal.setOnClickListener {
             if (numTotalPlayers.text.toString().toInt() >= 3) {
-                binding.numTotalPlayers.text =
-                    (numTotalPlayers.text.toString().toInt() - 1).toString()
+                viewModel.updateTotalPlayers(false)
             }
         }
 
         binding.btnMinusFake.setOnClickListener {
             if (numFakePlayers.text.toString().toInt() >= 2) {
-                binding.numFakePlayers.text =
-                    (numFakePlayers.text.toString().toInt() - 1).toString()
+                viewModel.updateTotalSpies(false)
+
             }
         }
 
         binding.btnMinusMinute.setOnClickListener {
             if (numMinutes.text.toString().toInt() >= 2) {
-                binding.numMinutes.text =
-                    (numMinutes.text.toString().toInt() - 1).toString()
+                viewModel.updateTotalMins(true)
             }
         }
     }

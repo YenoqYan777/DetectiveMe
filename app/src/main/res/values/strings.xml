@@ -182,7 +182,7 @@
     </string-array>
 
     <string name="rulesFull">"Detective Game" is a fun, entertaining game, it is convenient to play during friendly meetings.
-Enter the number of players և the duration of the game, click "start". Then, in turn, each player picks up the phone, presses "show", looks at the word, presses "hide", passes the phone to the other player, and so on, until everyone gets the word. Then click "start time".
+Enter the number of players and the duration of the game, click "start". Then, in turn, each player picks up the phone, presses "show", looks at the word, presses "hide", passes the phone to the other player, and so on, until everyone gets the word. Then click "start time".
 Each time the program shows the players a word from the selected dictionary. Everyone has the same word, except for one whose word "Spy" is used instead. Then the players try to find out who the spy is by asking each other questions, and the spy tries to guess the word during that Q&amp;A. As soon as the time is up, voting begins, everyone keeps their hands up, after 3 seconds everyone points at the same time to the player they suspect as a spy. If the players correctly found the spy as a result of the voting, the spy loses. In case of wrong voting, the spy wins. After the voting, the game ends.
 If during the game the spy guesses the word, he can just say the word and win at any moment. In case of announcing a wrong word, he will lose.
 During the question and answer session, the player should try to answer the question given to him. As much as possible, so that the spy can not immediately guess the word from his answer, but the other players understand the content of the answer.

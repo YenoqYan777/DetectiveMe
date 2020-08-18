@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+    <variable
+        name="viewModel"
+        type="com.detectiveme.ui.playerCount.PlayerCountViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -55,7 +57,7 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,6 +106,7 @@
                             android:layout_marginStart="16dp"
                             android:background="@drawable/ic_plus"
                             android:elevation="10dp"
+                            android:onClick="@{() -> viewModel.updateTotalPlayers(true)}"
                             android:foreground="?attr/selectableItemBackground"
                             app:layout_constraintBottom_toBottomOf="@+id/numTotalPlayers"
                             app:layout_constraintStart_toStartOf="parent"
@@ -176,6 +179,7 @@
                             android:layout_marginStart="16dp"
                             android:background="@drawable/ic_plus"
                             android:elevation="10dp"
+                            android:onClick="@{() -> viewModel.updateTotalSpies(true)}"
                             android:foreground="?attr/selectableItemBackground"
                             app:layout_constraintBottom_toBottomOf="@+id/numFakePlayers"
                             app:layout_constraintStart_toStartOf="parent"
@@ -247,6 +251,7 @@
                             android:layout_marginStart="16dp"
                             android:background="@drawable/ic_plus"
                             android:elevation="10dp"
+                            android:onClick="@{() -> viewModel.updateTotalMins(true)}"
                             android:foreground="?attr/selectableItemBackground"
                             app:layout_constraintBottom_toBottomOf="@+id/numMinutes"
                             app:layout_constraintStart_toStartOf="parent"

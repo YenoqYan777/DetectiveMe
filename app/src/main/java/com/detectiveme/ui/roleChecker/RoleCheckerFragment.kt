@@ -55,29 +55,32 @@ class RoleCheckerFragment : BaseFragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_role_checker, container, false)
-        initAd()
         setLocale(lang, requireContext())
+        hideShowRole()
+
+        binding.txtRole.visibility = INVISIBLE
+        binding.btnSeeHide.text = resources.getString(R.string.show)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initAd()
         KEY = args.wordList
         players = args.players
         totalP = players[0]
         fakeP = players[1]
         mins = players[2]
         totalNormalP = players[0] - fakeP
-
-        hideShowRole()
-
         viewModel.getRandomWordToShow(
-            when (KEY) {
-                "animals" -> animals
-                "profs" -> profs
-                else -> places
-            }
-        )
-        binding.txtRole.visibility = INVISIBLE
-        binding.btnSeeHide.text = resources.getString(R.string.show)
-        return binding.root
-    }
+                when (KEY) {
+                    "animals" -> animals
+                    "profs" -> profs
+                    else -> places
+                }
+                )
 
+    }
     override fun onAttach(context: Context) {
         super.onAttach(context)
         animals = requireContext().resources.getStringArray(R.array.animals).toList()

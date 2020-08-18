@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.navArgs
 import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectTypeBinding
-import com.detectiveme.util.buttonEffect
 
 
 class SelectTypeFragment : BaseFragment() {
@@ -43,9 +41,6 @@ class SelectTypeFragment : BaseFragment() {
     override fun getViewModel(): BaseViewModel = viewModel
 
     private fun onButtonsClicked() {
-        buttonEffect(binding.btnTypeAnimals)
-        buttonEffect(binding.btnTypePlaces)
-        buttonEffect(binding.btnTypeProf)
         binding.btnBackList.setOnClickListener {
             viewModel.navigateBack()
         }

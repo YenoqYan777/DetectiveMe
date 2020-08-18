@@ -6,7 +6,6 @@ import java.util.*
 
 class RoleCheckerViewModel(application: Application) : BaseViewModel(application) {
     var wordToShow = ""
-
     fun getRandomWordToShow(list: List<String>) {
         val random = Random()
         val ranNum: Int = random.nextInt(list.size)
