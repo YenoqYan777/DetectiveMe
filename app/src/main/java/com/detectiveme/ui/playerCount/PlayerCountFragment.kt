@@ -3,6 +3,8 @@ package com.detectiveme.ui.playerCount
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -17,9 +19,7 @@ import kotlinx.android.synthetic.main.fragment_player_count.*
 
 class PlayerCountFragment : BaseFragment() {
     private lateinit var binding: FragmentPlayerCountBinding
-    private val viewModel: PlayerCountViewModel by lazy {
-        ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
-    }
+    private lateinit var viewModel: PlayerCountViewModel
     private val args: PlayerCountFragmentArgs by navArgs()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +28,6 @@ class PlayerCountFragment : BaseFragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_player_count, container, false
         )
-        binding.viewModel = viewModel
-
         return binding.root
     }
 
@@ -42,6 +40,8 @@ class PlayerCountFragment : BaseFragment() {
     }
 
     private fun initViewModel() {
+        viewModel = ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
+        binding.viewModel = viewModel
         viewModel.totalPlayer.observe(viewLifecycleOwner, Observer {
             numTotalPlayers.text = it.toString()
         })
@@ -52,9 +52,7 @@ class PlayerCountFragment : BaseFragment() {
         viewModel.totalMins.observe(viewLifecycleOwner, Observer {
             numMinutes.text = it.toString()
         })
-
     }
-
 
     private fun onButtonsClickedListener() {
         binding.btnBack.setOnClickListener {
@@ -62,6 +60,7 @@ class PlayerCountFragment : BaseFragment() {
         }
 
         binding.btnStart.setOnClickListener {
+            binding.progressBar.visibility = VISIBLE
             if (numTotalPlayers.text.toString().toInt() <= numFakePlayers.text.toString().toInt()) {
                 Toast.makeText(
                     requireContext(),
@@ -74,12 +73,12 @@ class PlayerCountFragment : BaseFragment() {
                     numFakePlayers.text.toString().toInt(),
                     numMinutes.text.toString().toInt()
                 )
-
                 viewModel.navigate(
                     PlayerCountFragmentDirections.actionPlayerCountFragmentToRoleCheckerFragment(
                         args.wordList, players
                     )
                 )
+                binding.progressBar.visibility = GONE
             }
         }
 
@@ -92,7 +91,6 @@ class PlayerCountFragment : BaseFragment() {
         binding.btnMinusFake.setOnClickListener {
             if (numFakePlayers.text.toString().toInt() >= 2) {
                 viewModel.updateTotalSpies(false)
-
             }
         }
 

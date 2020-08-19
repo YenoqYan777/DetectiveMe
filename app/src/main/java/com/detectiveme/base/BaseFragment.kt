@@ -10,12 +10,15 @@ import com.detectiveme.util.NavigationCommand
 
 abstract class BaseFragment : Fragment() {
     abstract fun getViewModel(): BaseViewModel
-    companion object{
-        var lang = "en"
-    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         observeNavigation(getViewModel())
+    }
+
+    companion object {
+        var lang: String = "en"
+        var wordList: List<String>? = null
     }
 
     private fun observeNavigation(viewModel: BaseViewModel) {

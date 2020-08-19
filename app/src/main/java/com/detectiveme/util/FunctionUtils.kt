@@ -7,7 +7,7 @@ import android.util.DisplayMetrics
 import java.util.*
 
 
-fun setLocale(lang: String?, context: Context) {
+fun setLocale(lang: String, context: Context) {
     val myLocale = Locale(lang)
     val res: Resources = context.resources
     val dm: DisplayMetrics = res.displayMetrics

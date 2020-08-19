@@ -67,7 +67,6 @@
         <argument
             android:name="players"
             app:argType="integer[]" />
-
     </fragment>
 
 

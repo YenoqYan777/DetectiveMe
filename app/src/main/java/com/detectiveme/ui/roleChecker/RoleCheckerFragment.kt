@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.INVISIBLE
-import android.view.View.VISIBLE
+import android.view.View.*
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
@@ -44,6 +43,13 @@ class RoleCheckerFragment : BaseFragment() {
     private var fakeCount = 1
     private var normPlayerCount = 1
 
+    private var spy = ""
+    private var show = ""
+    private var hide = ""
+    private var finish = ""
+    private var startTimer = ""
+
+
     private lateinit var animals: List<String>
     private lateinit var profs: List<String>
     private lateinit var places: List<String>
@@ -55,9 +61,6 @@ class RoleCheckerFragment : BaseFragment() {
     ): View? {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_role_checker, container, false)
-        setLocale(lang, requireContext())
-        hideShowRole()
-
         binding.txtRole.visibility = INVISIBLE
         binding.btnSeeHide.text = resources.getString(R.string.show)
         return binding.root
@@ -66,6 +69,7 @@ class RoleCheckerFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAd()
+        hideShowRole()
         KEY = args.wordList
         players = args.players
         totalP = players[0]
@@ -73,19 +77,27 @@ class RoleCheckerFragment : BaseFragment() {
         mins = players[2]
         totalNormalP = players[0] - fakeP
         viewModel.getRandomWordToShow(
-                when (KEY) {
-                    "animals" -> animals
-                    "profs" -> profs
-                    else -> places
-                }
-                )
+            when (KEY) {
+                "animals" -> animals
+                "profs" -> profs
+                else -> places
+            }
+        )
 
     }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
+
         animals = requireContext().resources.getStringArray(R.array.animals).toList()
         profs = requireContext().resources.getStringArray(R.array.profs).toList()
         places = requireContext().resources.getStringArray(R.array.places).toList()
+
+        spy = requireContext().resources.getString(R.string.spy)
+        show = requireContext().resources.getString(R.string.show)
+        hide = requireContext().resources.getString(R.string.hide)
+        finish = requireContext().resources.getString(R.string.finish)
+        startTimer = requireContext().resources.getString(R.string.start_timer)
     }
 
     override fun getViewModel(): BaseViewModel = viewModel
@@ -109,27 +121,62 @@ class RoleCheckerFragment : BaseFragment() {
         }
     }
 
+    private fun hideShowRole() {
+        binding.progressBar.visibility = GONE
+        binding.btnSeeHide.setOnClickListener {
+            if (isRoleVisible) {
+                roleIsVisible()
+            } else {
+                roleNotVisible()
+            }
+        }
+    }
+
     private fun roleIsVisible() {
         if (count > totalP) {
             if (isTimerStarted != null) {
                 if (isTimerStarted == true) {
+                    setLocale(lang, requireContext())
                     viewModel.navigateBack()
                 } else {
                     startTimer()
                 }
             } else {
                 binding.txtRole.text = mins.toString()
-                binding.btnSeeHide.text = resources.getString(R.string.start_timer)
+                binding.btnSeeHide.text = startTimer
                 binding.txtRole.visibility = VISIBLE
 
                 isTimerStarted = false
             }
 
         } else {
-            binding.btnSeeHide.text = resources.getString(R.string.show)
+            binding.btnSeeHide.text = show
             binding.txtRole.visibility = INVISIBLE
 
             isRoleVisible = false
+        }
+    }
+
+    private fun roleNotVisible() {
+        if (count <= totalP) {
+            if (fakeCount <= fakeP && normPlayerCount <= totalNormalP) {
+                val chooser = random.nextBoolean()
+                if (chooser) {
+                    binding.txtRole.text = spy
+                    fakeCount++
+                } else {
+                    binding.txtRole.text = viewModel.wordToShow
+                    normPlayerCount++
+                }
+            } else if (fakeCount > fakeP) {
+                binding.txtRole.text = viewModel.wordToShow
+            } else {
+                binding.txtRole.text = spy
+            }
+            count++
+            binding.txtRole.visibility = VISIBLE
+            binding.btnSeeHide.text = hide
+            isRoleVisible = true
         }
     }
 
@@ -146,42 +193,8 @@ class RoleCheckerFragment : BaseFragment() {
                 viewModel.navigateBack()
             }
         }.start()
-        binding.btnSeeHide.text =
-            requireActivity().resources.getString(R.string.stop_timer)
+        binding.btnSeeHide.text = finish
         binding.txtRole.visibility = VISIBLE
         isTimerStarted = true
-    }
-
-    private fun roleNotVisible() {
-        if (count <= totalP) {
-            if (fakeCount <= fakeP && normPlayerCount <= totalNormalP) {
-                val chooser = random.nextBoolean()
-                if (chooser) {
-                    binding.txtRole.text = resources.getString(R.string.spy)
-                    fakeCount++
-                } else {
-                    binding.txtRole.text = viewModel.wordToShow
-                    normPlayerCount++
-                }
-            } else if (fakeCount > fakeP) {
-                binding.txtRole.text = viewModel.wordToShow
-            } else {
-                binding.txtRole.text = resources.getString(R.string.spy)
-            }
-            count++
-            binding.txtRole.visibility = VISIBLE
-            binding.btnSeeHide.text = resources.getString(R.string.hide)
-            isRoleVisible = true
-        }
-    }
-
-    private fun hideShowRole() {
-        binding.btnSeeHide.setOnClickListener {
-            if (isRoleVisible) {
-                roleIsVisible()
-            } else {
-                roleNotVisible()
-            }
-        }
     }
 }

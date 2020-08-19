@@ -45,19 +45,25 @@ class SelectLangFragment : BaseFragment() {
     private fun onLangSelectedListener() {
 
         binding.btnLangArm.setOnClickListener {
-            setLocale("hy", requireContext())
             lang = "hy"
-            viewModel.navigate(SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment())
+            setLocale(lang, requireContext())
+            viewModel.navigate(
+                SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
+            )
         }
         binding.btnLangRu.setOnClickListener {
-            setLocale("ru", requireContext())
             lang = "ru"
-            viewModel.navigate(SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment())
+            setLocale(lang, requireContext())
+            viewModel.navigate(
+                SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
+            )
         }
         binding.btnLangUs.setOnClickListener {
-            setLocale("en", requireContext())
             lang = "en"
-            viewModel.navigate(SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment())
+            setLocale(lang, requireContext())
+            viewModel.navigate(
+                SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
+            )
         }
     }
 

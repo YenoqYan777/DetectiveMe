@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.navArgs
 import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectTypeBinding
+import com.detectiveme.util.setLocale
 
 
 class SelectTypeFragment : BaseFragment() {
@@ -17,7 +19,6 @@ class SelectTypeFragment : BaseFragment() {
     private val viewModel: SelectTypeViewModel by lazy {
         ViewModelProviders.of(this).get(SelectTypeViewModel::class.java)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +27,7 @@ class SelectTypeFragment : BaseFragment() {
             inflater, R.layout.fragment_select_type, container, false
         )
 
-
+        setLocale(lang, requireContext())
         return binding.root
     }
 
