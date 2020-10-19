@@ -35,7 +35,7 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         binding = FragmentPlayerCountBinding.bind(view)
         onButtonsClickedListener()
         initViewModel()
-//        initAd()
+        initAd()
     }
 
     private fun initViewModel() {
