@@ -8,7 +8,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.detectiveme.util.NavigationCommand
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment(private val layoutID: Int) : Fragment(layoutID) {
     abstract fun getViewModel(): BaseViewModel
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

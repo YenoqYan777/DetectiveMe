@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.*
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.detectiveme.R
@@ -15,13 +14,12 @@ import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentRoleCheckerBinding
 import com.detectiveme.util.setLocale
-import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import java.util.*
 
-class RoleCheckerFragment : BaseFragment() {
+class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
     private lateinit var binding: FragmentRoleCheckerBinding
     private val viewModel: RoleCheckerViewModel by lazy {
         ViewModelProviders.of(this).get(RoleCheckerViewModel::class.java)
@@ -58,11 +56,13 @@ class RoleCheckerFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_role_checker, container, false)
-        binding.txtRole.visibility = INVISIBLE
-        binding.btnSeeHide.text = resources.getString(R.string.show)
+    ): View {
+        binding = FragmentRoleCheckerBinding.inflate(inflater)
+        binding.apply {
+            txtRole.visibility = INVISIBLE
+            btnSeeHide.text = resources.getString(R.string.show)
+        }
+
         return binding.root
     }
 
@@ -106,19 +106,6 @@ class RoleCheckerFragment : BaseFragment() {
         MobileAds.initialize(requireContext()) {}
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
-
-        mInterstitialAd = InterstitialAd(requireActivity())
-        mInterstitialAd.adUnitId = getString(R.string.key_full)
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
-        mInterstitialAd.adListener = object : AdListener() {
-            override fun onAdLoaded() {
-                super.onAdLoaded()
-                if (mInterstitialAd.isLoaded) {
-                    mInterstitialAd.show()
-                }
-
-            }
-        }
     }
 
     private fun hideShowRole() {

@@ -13,9 +13,10 @@
         <action
             android:id="@+id/action_selectLangFragment_to_selectTypeFragment"
             app:destination="@id/selectTypeFragment"
-            app:enterAnim="@anim/anim_in_left"
-            app:exitAnim="@anim/right_to_left"
-            app:popExitAnim="@anim/anim_slide_out_right"
+            app:enterAnim="@anim/anim_in_right"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_in_left"
+            app:popExitAnim="@anim/anim_slide_out_left"
             app:popUpTo="@id/selectTypeFragment" />
     </fragment>
     <fragment
@@ -26,9 +27,10 @@
         <action
             android:id="@+id/action_selectTypeFragment_to_playerCountFragment"
             app:destination="@id/playerCountFragment"
-            app:enterAnim="@anim/anim_in_left"
-            app:exitAnim="@anim/right_to_left"
-            app:popExitAnim="@anim/anim_slide_out_right" />
+            app:enterAnim="@anim/anim_in_right"
+            app:exitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_in_left"
+            app:popExitAnim="@anim/anim_slide_out_left" />
 
         <action
             android:id="@+id/action_selectTypeFragment_to_viewRulesFragment"

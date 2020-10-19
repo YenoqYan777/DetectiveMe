@@ -13,7 +13,7 @@ import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentViewRulesBinding
 
 
-class ViewRulesFragment : BaseFragment() {
+class ViewRulesFragment : BaseFragment(R.layout.fragment_view_rules) {
     private lateinit var binding: FragmentViewRulesBinding
     private val viewModel: ViewRulesViewModel by lazy {
         ViewModelProviders.of(this).get(ViewRulesViewModel::class.java)
@@ -24,13 +24,14 @@ class ViewRulesFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_view_rules, container, false
-        )
-        binding.btnBack.setOnClickListener {
-            viewModel.navigateBack()
+        binding = FragmentViewRulesBinding.inflate(inflater)
+
+        binding.apply {
+            btnBack.setOnClickListener {
+                viewModel.navigateBack()
+            }
         }
 
         return binding.root

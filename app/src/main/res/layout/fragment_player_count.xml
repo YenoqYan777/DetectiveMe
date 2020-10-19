@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-    <variable
-        name="viewModel"
-        type="com.detectiveme.ui.playerCount.PlayerCountViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.detectiveme.ui.playerCount.PlayerCountViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +18,7 @@
 
         <TextView
             android:id="@+id/txtPlayerCountChoose"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
@@ -25,8 +26,9 @@
             android:text="@string/choose"
             android:textAlignment="textStart"
             android:textColor="@color/textColor"
-            android:textSize="25sp"
+            android:textSize="19sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,7 +40,7 @@
             android:text="@string/player_count"
             android:textAlignment="textStart"
             android:textColor="@color/redColor"
-            android:textSize="25sp"
+            android:textSize="19sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/txtPlayerCountChoose"
@@ -74,6 +76,13 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
                     app:cardCornerRadius="15dp"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0.0px"
+                    android:clipToPadding="false"
+                    android:clipChildren="false"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:outlineSpotShadowColor="@android:color/white"
+                    app:cardPreventCornerOverlap="false"
                     app:layout_constraintBottom_toTopOf="@+id/cvSpies"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -88,13 +97,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="16dp"
                             android:text="@string/total_players"
                             android:textAlignment="center"
                             android:textColor="@color/mainDarkBckg"
-                            android:textSize="22sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/numTotalPlayers"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -104,11 +111,13 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
                             android:background="@drawable/ic_plus"
                             android:elevation="10dp"
+                            android:foreground="?attr/selectableItemBackgroundBorderless"
                             android:onClick="@{() -> viewModel.updateTotalPlayers(true)}"
-                            android:foreground="?attr/selectableItemBackground"
-                            app:layout_constraintBottom_toBottomOf="@+id/numTotalPlayers"
+                            app:layout_constraintBottom_toBottomOf="@+id/btnMinusTotal"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtAlloverPlayers" />
 
@@ -116,11 +125,11 @@
                             android:id="@+id/numTotalPlayers"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="16dp"
                             android:text="2"
                             android:textAlignment="center"
                             android:textColor="@color/mainDarkBckg"
-                            android:textSize="34sp"
+                            android:textSize="25sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -133,7 +142,7 @@
                             android:background="@drawable/ic_minus"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
-                            app:layout_constraintBottom_toBottomOf="@+id/numTotalPlayers"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtAlloverPlayers" />
 
@@ -161,13 +170,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="16dp"
                             android:text="@string/spies_from_total"
                             android:textAlignment="center"
                             android:textColor="@color/mainDarkBckg"
-                            android:textSize="22sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/numFakePlayers"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -177,11 +184,12 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:background="@drawable/ic_plus"
                             android:elevation="10dp"
-                            android:onClick="@{() -> viewModel.updateTotalSpies(true)}"
                             android:foreground="?attr/selectableItemBackground"
-                            app:layout_constraintBottom_toBottomOf="@+id/numFakePlayers"
+                            android:onClick="@{() -> viewModel.updateTotalSpies(true)}"
+                            app:layout_constraintBottom_toBottomOf="@+id/btnMinusFake"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtFakePlayers" />
 
@@ -189,11 +197,11 @@
                             android:id="@+id/numFakePlayers"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="16dp"
                             android:text="1"
                             android:textAlignment="center"
                             android:textColor="@color/mainDarkBckg"
-                            android:textSize="34sp"
+                            android:textSize="25sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -206,7 +214,7 @@
                             android:background="@drawable/ic_minus"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
-                            app:layout_constraintBottom_toBottomOf="@+id/numFakePlayers"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtFakePlayers" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -233,13 +241,11 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="16dp"
                             android:text="@string/time_minutes"
                             android:textAlignment="center"
                             android:textColor="@color/mainDarkBckg"
-                            android:textSize="22sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toTopOf="@+id/numMinutes"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -249,11 +255,12 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
                             android:background="@drawable/ic_plus"
                             android:elevation="10dp"
-                            android:onClick="@{() -> viewModel.updateTotalMins(true)}"
                             android:foreground="?attr/selectableItemBackground"
-                            app:layout_constraintBottom_toBottomOf="@+id/numMinutes"
+                            android:onClick="@{() -> viewModel.updateTotalMins(true)}"
+                            app:layout_constraintBottom_toBottomOf="@+id/btnMinusMinute"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtMinutes" />
 
@@ -261,11 +268,11 @@
                             android:id="@+id/numMinutes"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
+                            android:layout_marginBottom="16dp"
                             android:text="1"
                             android:textAlignment="center"
                             android:textColor="@color/mainDarkBckg"
-                            android:textSize="34sp"
+                            android:textSize="25sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent" />
@@ -278,7 +285,7 @@
                             android:background="@drawable/ic_minus"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
-                            app:layout_constraintBottom_toBottomOf="@+id/numMinutes"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtMinutes" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -296,7 +303,7 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:text="@string/start"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

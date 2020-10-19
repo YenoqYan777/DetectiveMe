@@ -7,8 +7,4 @@ import com.detectiveme.base.BaseViewModel
 
 class SelectTypeViewModel(application: Application): BaseViewModel(application) {
     private var data: LiveData<MutableList<String>> = MutableLiveData()
-    fun setData(){
-
-    }
-
 }

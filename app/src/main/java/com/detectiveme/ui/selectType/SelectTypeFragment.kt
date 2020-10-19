@@ -14,7 +14,7 @@ import com.detectiveme.databinding.FragmentSelectTypeBinding
 import com.detectiveme.util.setLocale
 
 
-class SelectTypeFragment : BaseFragment() {
+class SelectTypeFragment : BaseFragment(R.layout.fragment_select_type) {
     private lateinit var binding: FragmentSelectTypeBinding
     private val viewModel: SelectTypeViewModel by lazy {
         ViewModelProviders.of(this).get(SelectTypeViewModel::class.java)
@@ -22,10 +22,8 @@ class SelectTypeFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_select_type, container, false
-        )
+    ): View {
+        binding = FragmentSelectTypeBinding.inflate(inflater)
 
         setLocale(lang, requireContext())
         return binding.root
@@ -34,8 +32,6 @@ class SelectTypeFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         onButtonsClicked()
     }
 

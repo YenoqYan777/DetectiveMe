@@ -15,28 +15,27 @@ import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentPlayerCountBinding
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.fragment_player_count.*
 
-class PlayerCountFragment : BaseFragment() {
+class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
     private lateinit var binding: FragmentPlayerCountBinding
     private lateinit var viewModel: PlayerCountViewModel
     private val args: PlayerCountFragmentArgs by navArgs()
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_player_count, container, false
-        )
-        return binding.root
-    }
+
+    private lateinit var mInterstitialAd: InterstitialAd
 
     override fun getViewModel(): BaseViewModel = viewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentPlayerCountBinding.bind(view)
         onButtonsClickedListener()
         initViewModel()
+//        initAd()
     }
 
     private fun initViewModel() {
@@ -67,6 +66,7 @@ class PlayerCountFragment : BaseFragment() {
                     requireActivity().resources.getString(R.string.moreNumberErrorMessage),
                     Toast.LENGTH_SHORT
                 ).show()
+                binding.progressBar.visibility = GONE
             } else {
                 val players = intArrayOf(
                     numTotalPlayers.text.toString().toInt(),
@@ -97,6 +97,21 @@ class PlayerCountFragment : BaseFragment() {
         binding.btnMinusMinute.setOnClickListener {
             if (numMinutes.text.toString().toInt() >= 2) {
                 viewModel.updateTotalMins(true)
+            }
+        }
+    }
+
+    private fun initAd() {
+        mInterstitialAd = InterstitialAd(requireActivity())
+        mInterstitialAd.adUnitId = getString(R.string.key_full)
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+        mInterstitialAd.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                super.onAdLoaded()
+                if (mInterstitialAd.isLoaded) {
+                    mInterstitialAd.show()
+                }
+
             }
         }
     }
