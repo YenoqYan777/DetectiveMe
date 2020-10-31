@@ -31,7 +31,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/btn_rounded_less"
                     android:elevation="10dp"
@@ -177,13 +176,15 @@
 
                 <ImageView
                     android:id="@+id/imageView2"
-                    android:layout_width="250dp"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="24dp"
-                    android:src="@drawable/lang_art"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="2dp"
+                    android:src="@drawable/choose_lang_art"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

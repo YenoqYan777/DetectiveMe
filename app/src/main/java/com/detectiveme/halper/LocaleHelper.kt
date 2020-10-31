@@ -7,7 +7,7 @@ import java.util.*
 
 class LocaleHelper {
 
-    fun setLocale(context: Activity, language: String?) {
+    fun setLocale(context: Activity, language: String) {
         val locale = Locale(language)
         val config = Configuration(context.resources.configuration)
         Locale.setDefault(locale)
