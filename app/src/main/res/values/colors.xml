@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="mainDarkBckg">#0B344D</color>
+    <!--    <color name="mainDarkBckg">#0B344D</color>-->
+<!--        <color name="mainDarkBckg">#f4d06f</color>-->
+<!--        <color name="mainDarkBckg">#fcbf49</color>-->
+<!--    <color name="mainDarkBckg">#F9DB49</color>-->
+    <color name="mainDarkBckg">#fdebd3</color>
     <color name="redColor">#D8353A</color>
     <color name="textColor">#ffffff</color>
+<!--    <color name="darkTextColor">#0B344D</color>-->
+    <color name="darkTextColor">#0a2f35</color>
 </resources>

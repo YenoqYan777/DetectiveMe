@@ -1,13 +1,9 @@
 package com.detectiveme.ui.playerCount
 
+import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
@@ -15,20 +11,24 @@ import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentPlayerCountBinding
+import com.detectiveme.halper.LocaleHelper
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
-import com.google.android.gms.ads.MobileAds
+import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_player_count.*
+
 
 class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
     private lateinit var binding: FragmentPlayerCountBinding
-    private lateinit var viewModel: PlayerCountViewModel
+    private val viewModel: PlayerCountViewModel by lazy {
+        ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
+    }
     private val args: PlayerCountFragmentArgs by navArgs()
-
     private lateinit var mInterstitialAd: InterstitialAd
 
     override fun getViewModel(): BaseViewModel = viewModel
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,8 +38,12 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         initAd()
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        LocaleHelper().setLocale(requireActivity(), lang)
+    }
+
     private fun initViewModel() {
-        viewModel = ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
         binding.viewModel = viewModel
         viewModel.totalPlayer.observe(viewLifecycleOwner, Observer {
             numTotalPlayers.text = it.toString()
@@ -52,38 +56,39 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
             numMinutes.text = it.toString()
         })
     }
-
     private fun onButtonsClickedListener() {
         binding.btnBack.setOnClickListener {
+            LocaleHelper().setLocale(requireActivity(), lang)
             viewModel.navigateBack()
         }
 
         binding.btnStart.setOnClickListener {
-            binding.progressBar.visibility = VISIBLE
             if (numTotalPlayers.text.toString().toInt() <= numFakePlayers.text.toString().toInt()) {
                 Toast.makeText(
                     requireContext(),
                     requireActivity().resources.getString(R.string.moreNumberErrorMessage),
                     Toast.LENGTH_SHORT
                 ).show()
-                binding.progressBar.visibility = GONE
+
             } else {
                 val players = intArrayOf(
                     numTotalPlayers.text.toString().toInt(),
                     numFakePlayers.text.toString().toInt(),
                     numMinutes.text.toString().toInt()
                 )
+
                 viewModel.navigate(
                     PlayerCountFragmentDirections.actionPlayerCountFragmentToRoleCheckerFragment(
                         args.wordList, players
                     )
                 )
-                binding.progressBar.visibility = GONE
+
             }
         }
 
+
         binding.btnMinusTotal.setOnClickListener {
-            if (numTotalPlayers.text.toString().toInt() >= 3) {
+            if (numTotalPlayers.text.toString().toInt() >= 4) {
                 viewModel.updateTotalPlayers(false)
             }
         }
@@ -96,7 +101,7 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
 
         binding.btnMinusMinute.setOnClickListener {
             if (numMinutes.text.toString().toInt() >= 2) {
-                viewModel.updateTotalMins(true)
+                viewModel.updateTotalMins(false)
             }
         }
     }
@@ -105,13 +110,12 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         mInterstitialAd = InterstitialAd(requireActivity())
         mInterstitialAd.adUnitId = getString(R.string.key_full)
         mInterstitialAd.loadAd(AdRequest.Builder().build())
-        mInterstitialAd.adListener = object : AdListener() {
+        mInterstitialAd.adListener = object: AdListener() {
             override fun onAdLoaded() {
                 super.onAdLoaded()
                 if (mInterstitialAd.isLoaded) {
                     mInterstitialAd.show()
                 }
-
             }
         }
     }

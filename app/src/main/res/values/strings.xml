@@ -15,7 +15,7 @@
     <string name="word_list">Word List</string>
     <string name="player_count">Player Count</string>
     <string name="total_players">Total Players</string>
-    <string name="spies_from_total">Spies from total</string>
+    <string name="spies_from_total">Spies</string>
     <string name="time_minutes">Time (Minutes)</string>
     <string name="start">Start</string>
     <string name="show">Show</string>
@@ -75,7 +75,8 @@
         <item> Mammoth </item>
         <item> Ostrich </item>
         <item> Rhinoceros </item>
-    </string-array>:
+    </string-array>
+    :
 
     <string-array name="profs">
         <item>Doctor</item>
@@ -129,7 +130,8 @@
         <item> Reporter </item>:
         <item> Host </item>:
         <item> Football commentator </item>
-    </string-array>:
+    </string-array>
+    :
 
     <string-array name="places">
         <item>Church</item>

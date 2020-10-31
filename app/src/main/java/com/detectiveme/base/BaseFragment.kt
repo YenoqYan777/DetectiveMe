@@ -8,7 +8,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.detectiveme.util.NavigationCommand
 
-abstract class BaseFragment(private val layoutID: Int) : Fragment(layoutID) {
+abstract class BaseFragment(layoutID: Int) : Fragment(layoutID) {
     abstract fun getViewModel(): BaseViewModel
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -18,7 +18,6 @@ abstract class BaseFragment(private val layoutID: Int) : Fragment(layoutID) {
 
     companion object {
         var lang: String = "en"
-        var wordList: List<String>? = null
     }
 
     private fun observeNavigation(viewModel: BaseViewModel) {

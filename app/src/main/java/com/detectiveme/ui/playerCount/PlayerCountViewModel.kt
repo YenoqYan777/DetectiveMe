@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.detectiveme.base.BaseViewModel
 
 class PlayerCountViewModel(application: Application) : BaseViewModel(application) {
-    private val _totalPlayers = MutableLiveData<Int>(2)
+    private val _totalPlayers = MutableLiveData<Int>(3)
     val totalPlayer: LiveData<Int>
         get() = _totalPlayers
 

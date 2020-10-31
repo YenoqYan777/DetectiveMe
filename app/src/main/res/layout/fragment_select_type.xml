@@ -18,29 +18,30 @@
             android:id="@+id/wordListHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/choose"
             android:textAlignment="textStart"
-            android:textColor="@color/textColor"
-            android:textSize="25sp"
+            android:textColor="@color/darkTextColor"
+            android:textSize="27sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/btnBackList"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/wordListHeader2"
+            app:layout_constraintEnd_toEndOf="@+id/wordListHeader2"
+            app:layout_constraintStart_toStartOf="@+id/wordListHeader2" />
 
         <TextView
             android:id="@+id/wordListHeader2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/word_list"
             android:textAlignment="textStart"
             android:textColor="@color/redColor"
-            android:textSize="25sp"
+            android:textSize="27sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/wordListHeader"
-            app:layout_constraintTop_toBottomOf="@+id/wordListHeader" />
+            app:layout_constraintBottom_toTopOf="@+id/btnTypeAnimals"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnTypeAnimals"
@@ -54,7 +55,7 @@
             android:padding="8dp"
             android:text="@string/animals"
             android:textAllCaps="false"
-            android:textColor="@color/redColor"
+            android:textColor="@color/darkTextColor"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/btnTypeProf"
@@ -73,7 +74,7 @@
             android:fontFamily="@font/heebo_extrabold"
             android:text="@string/places"
             android:textAllCaps="false"
-            android:textColor="@color/redColor"
+            android:textColor="@color/darkTextColor"
             android:textSize="20sp"
             android:textStyle="bold"
             android:padding="8dp"
@@ -87,6 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="64dp"
             android:backgroundTint="@color/textColor"
@@ -94,13 +96,13 @@
             android:padding="8dp"
             android:text="@string/professions"
             android:textAllCaps="false"
-            android:textColor="@color/redColor"
+            android:textColor="@color/darkTextColor"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/btnRules"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wordListHeader2" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <Button
@@ -124,15 +126,15 @@
 
         <ImageButton
             android:id="@+id/btnBackList"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:background="@android:color/transparent"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/wordListHeader" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

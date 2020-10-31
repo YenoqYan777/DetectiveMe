@@ -7,13 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.*
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentRoleCheckerBinding
-import com.detectiveme.util.setLocale
+import com.detectiveme.halper.LocaleHelper
+import com.detectiveme.ui.roleChecker.RoleCheckerViewModel.Companion.wordToShow
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
@@ -88,7 +90,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-
+        LocaleHelper().setLocale(requireActivity(), lang)
         animals = requireContext().resources.getStringArray(R.array.animals).toList()
         profs = requireContext().resources.getStringArray(R.array.profs).toList()
         places = requireContext().resources.getStringArray(R.array.places).toList()
@@ -98,6 +100,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
         hide = requireContext().resources.getString(R.string.hide)
         finish = requireContext().resources.getString(R.string.finish)
         startTimer = requireContext().resources.getString(R.string.start_timer)
+
     }
 
     override fun getViewModel(): BaseViewModel = viewModel
@@ -123,7 +126,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
         if (count > totalP) {
             if (isTimerStarted != null) {
                 if (isTimerStarted == true) {
-                    setLocale(lang, requireContext())
+                    LocaleHelper().setLocale(requireActivity(), lang)
                     viewModel.navigateBack()
                 } else {
                     startTimer()
@@ -152,11 +155,11 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
                     binding.txtRole.text = spy
                     fakeCount++
                 } else {
-                    binding.txtRole.text = viewModel.wordToShow
+                    binding.txtRole.text = wordToShow
                     normPlayerCount++
                 }
             } else if (fakeCount > fakeP) {
-                binding.txtRole.text = viewModel.wordToShow
+                binding.txtRole.text =  wordToShow
             } else {
                 binding.txtRole.text = spy
             }
@@ -175,7 +178,6 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
                 val textToShowForTimer = "$minutes : $seconds"
                 binding.txtRole.text = textToShowForTimer
             }
-
             override fun onFinish() {
                 viewModel.navigateBack()
             }
@@ -184,4 +186,6 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
         binding.txtRole.visibility = VISIBLE
         isTimerStarted = true
     }
+
+
 }

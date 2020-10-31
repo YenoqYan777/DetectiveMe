@@ -47,7 +47,7 @@
                     android:background="@drawable/btn_rounded_less"
                     android:padding="8dp"
                     android:text="@string/rulesFull"
-                    android:textColor="@color/mainDarkBckg"
+                    android:textColor="@color/darkTextColor"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -7,7 +7,7 @@ import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectLangBinding
-import com.detectiveme.util.setLocale
+import com.detectiveme.halper.LocaleHelper
 
 class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
     private lateinit var binding: FragmentSelectLangBinding
@@ -33,21 +33,21 @@ class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
         binding.apply {
             btnLangArm.setOnClickListener {
                 lang = "hy"
-                setLocale(lang, requireContext())
+                LocaleHelper().setLocale(requireActivity(), lang)
                 viewModel.navigate(
                     SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
                 )
             }
             btnLangRu.setOnClickListener {
                 lang = "ru"
-                setLocale(lang, requireContext())
+                LocaleHelper().setLocale(requireActivity(), lang)
                 viewModel.navigate(
                     SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
                 )
             }
             btnLangUs.setOnClickListener {
                 lang = "en"
-                setLocale(lang, requireContext())
+                LocaleHelper().setLocale(requireActivity(), lang)
                 viewModel.navigate(
                     SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
                 )

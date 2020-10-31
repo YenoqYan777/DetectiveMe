@@ -9,7 +9,7 @@
     <string name="word_list">Բառացանկը</string>
     <string name="player_count">Մասնակիցների քանակը</string>
     <string name="total_players">Ընդհանուր մասնակիցները</string>
-    <string name="spies_from_total">"Դրանցից լրտեսները "</string>
+    <string name="spies_from_total">"Լրտեսները"</string>
     <string name="time_minutes">Ժամանակը (Րոպե)</string>
     <string name="start">Սկսել</string>
     <string name="show">Բացել</string>
@@ -50,7 +50,7 @@
         <item>Պինգվին</item>
         <item>Խավարասեր</item>
         <item>Մեղու</item>
-        <item>Խող</item>
+        <item>Խոզ</item>
         <item>Թութակ</item>
         <item>Զեբր</item>
         <item>Ավանակ</item>

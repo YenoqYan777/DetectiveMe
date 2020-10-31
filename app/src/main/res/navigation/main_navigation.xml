@@ -14,6 +14,7 @@
             android:id="@+id/action_selectLangFragment_to_selectTypeFragment"
             app:destination="@id/selectTypeFragment"
             app:enterAnim="@anim/anim_in_right"
+            app:popUpToInclusive="true"
             app:exitAnim="@anim/anim_slide_out_right"
             app:popEnterAnim="@anim/anim_in_left"
             app:popExitAnim="@anim/anim_slide_out_left"
@@ -51,6 +52,7 @@
             app:destination="@id/roleCheckerFragment"
             app:enterAnim="@anim/slide_up"
             app:exitAnim="@anim/slide_down"
+            app:launchSingleTop="true"
             app:popEnterAnim="@anim/slide_up"
             app:popExitAnim="@anim/slide_down" />
         <argument

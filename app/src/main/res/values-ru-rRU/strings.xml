@@ -6,7 +6,7 @@
     <string name="show">Показать</string>
     <string name="hide">Скрыть</string>
     <string name="total_players">Всего участиков</string>
-    <string name="spies_from_total">Всего шпионов из общих</string>
+    <string name="spies_from_total">Всего шпионов</string>
     <string name="player_count">Число участников</string>
     <string name="word_list">Cловарный состав</string>
     <string name="choose">Выберите</string>
@@ -35,36 +35,36 @@
         <item>Лягушка</item>
         <item>Орангутанг</item>
         <item>Обезьяна</item>
-        <item>Գառ</item>
-        <item>Կով</item>
-        <item>Հնդկահավ</item>
-        <item>Ուղտ</item>
-        <item>Այծ</item>
-        <item>Փոկ</item>
-        <item>Դելֆին</item>
-        <item>Ծովաձի</item>
-        <item>Խխունջ</item>
-        <item>Բազե</item>
-        <item>Աղավնի</item>
-        <item>Պինգվին</item>
-        <item>Խավարասեր</item>
-        <item>Մեղու</item>
-        <item>Խող</item>
-        <item>Թութակ</item>
-        <item>Զեբր</item>
-        <item>Ավանակ</item>
-        <item>Ընձուղտ</item>
-        <item>Ֆլամինգո</item>
-        <item>Պանդա</item>
-        <item>Կենգուրու</item>
-        <item>Վագր</item>
-        <item>Նապաստակ</item>
-        <item>Աղվես</item>
-        <item>Արջ</item>
-        <item>Հովազ</item>
-        <item>Մամոնտ</item>
-        <item>Ջայլամ</item>
-        <item>Ռնգեղջուր</item>
+        <item>Ягненок</item>
+        <item>Корова</item>
+        <item>Индюк</item>
+        <item>Верблюд</item>
+        <item>Козел</item>
+        <item>Тюлень</item>
+        <item>Дельфин</item>
+        <item>Морской конек</item>
+        <item>Улитка</item>
+        <item>Сокол</item>
+        <item>Голубь</item>
+        <item>Пингвин</item>
+        <item>Таракан</item>
+        <item>Пчела</item>
+        <item>Свинья</item>
+        <item>Попугай</item>
+        <item>Зебра</item>
+        <item>Осел</item>
+        <item>Жираф</item>
+        <item>Фламинго</item>
+        <item>Панда</item>
+        <item>Кенгуру</item>
+        <item>Тигр</item>
+        <item>Кролик</item>
+        <item>Лиса</item>
+        <item>Медведь</item>
+        <item>Леопард</item>
+        <item>Мамонт</item>
+        <item>Страус</item>
+        <item>Носорог</item>
     </string-array>
 
     <string-array name="profs">
