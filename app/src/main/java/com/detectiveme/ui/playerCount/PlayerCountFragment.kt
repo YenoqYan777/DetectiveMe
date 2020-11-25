@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
+import com.detectiveme.DetectiveMeApplication
 import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
@@ -25,17 +26,15 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
     }
     private val args: PlayerCountFragmentArgs by navArgs()
-    private lateinit var mInterstitialAd: InterstitialAd
 
     override fun getViewModel(): BaseViewModel = viewModel
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentPlayerCountBinding.bind(view)
         onButtonsClickedListener()
         initViewModel()
-        initAd()
+        DetectiveMeApplication().initAd(requireContext(), binding.progressBar)
     }
 
     override fun onAttach(context: Context) {
@@ -86,7 +85,6 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
             }
         }
 
-
         binding.btnMinusTotal.setOnClickListener {
             if (numTotalPlayers.text.toString().toInt() >= 4) {
                 viewModel.updateTotalPlayers(false)
@@ -102,20 +100,6 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         binding.btnMinusMinute.setOnClickListener {
             if (numMinutes.text.toString().toInt() >= 2) {
                 viewModel.updateTotalMins(false)
-            }
-        }
-    }
-
-    private fun initAd() {
-        mInterstitialAd = InterstitialAd(requireActivity())
-        mInterstitialAd.adUnitId = getString(R.string.key_full)
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
-        mInterstitialAd.adListener = object: AdListener() {
-            override fun onAdLoaded() {
-                super.onAdLoaded()
-                if (mInterstitialAd.isLoaded) {
-                    mInterstitialAd.show()
-                }
             }
         }
     }

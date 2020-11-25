@@ -12,7 +12,7 @@
         android:id="@+id/progressBar"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:clickable="false"
         android:focusable="true"
         android:indeterminateDrawable="@drawable/spin_ring"

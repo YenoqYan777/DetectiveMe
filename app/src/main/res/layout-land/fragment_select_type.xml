@@ -24,7 +24,7 @@
             android:fontFamily="sans-serif-medium"
             android:text="@string/choose"
             android:textAlignment="textStart"
-            android:textColor="@color/textColor"
+            android:textColor="@color/darkTextColor"
             android:textSize="25sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/btnBackList"
@@ -75,10 +75,10 @@
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/textColor"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/heebo_extrabold"
                     android:text="@string/animals"
                     android:textAllCaps="false"
-                    android:textColor="@color/redColor"
+                    android:textColor="@color/darkTextColor"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -93,10 +93,10 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/textColor"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/heebo_extrabold"
                     android:text="@string/places"
                     android:textAllCaps="false"
-                    android:textColor="@color/redColor"
+                    android:textColor="@color/darkTextColor"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -112,10 +112,10 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/textColor"
-                    android:fontFamily="serif"
+                    android:fontFamily="@font/heebo_extrabold"
                     android:text="@string/professions"
                     android:textAllCaps="false"
-                    android:textColor="@color/redColor"
+                    android:textColor="@color/darkTextColor"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -146,5 +146,16 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+
+        <include
+            android:id="@+id/progressBar"
+            layout="@layout/progress_bar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

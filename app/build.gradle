@@ -7,7 +7,10 @@ apply plugin: "androidx.navigation.safeargs"
 
 android {
     compileSdkVersion 29
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
@@ -16,8 +19,8 @@ android {
         applicationId "com.detectiveme"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 10
-        versionName "3.0"
+        versionCode 11
+        versionName "3.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
