@@ -48,8 +48,8 @@
 
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_height="24dp"
             android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
@@ -77,13 +77,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
-                    app:cardCornerRadius="15dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
                     android:divider="@android:color/transparent"
                     android:dividerHeight="0.0px"
-                    android:clipToPadding="false"
-                    android:clipChildren="false"
-                    app:cardBackgroundColor="@android:color/white"
                     android:outlineSpotShadowColor="@android:color/white"
+                    app:cardBackgroundColor="@android:color/white"
+                    app:cardCornerRadius="15dp"
                     app:cardPreventCornerOverlap="false"
                     app:layout_constraintBottom_toTopOf="@+id/cvSpies"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -315,14 +315,34 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
-        <include
-            android:id="@+id/progressBar"
-            layout="@layout/progress_bar"
+        <ImageView
+            android:id="@+id/loadingBckg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#60000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:translationZ="5dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
 
+        <ImageView
+            android:id="@+id/imgLoading"
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/app_logo"
+            android:translationZ="7dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

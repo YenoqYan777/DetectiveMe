@@ -136,6 +136,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+
         <include
             android:id="@+id/progressBar"
             layout="@layout/progress_bar"

@@ -8,6 +8,9 @@
     <color name="mainDarkBckg">#fdebd3</color>
     <color name="redColor">#D8353A</color>
     <color name="textColor">#ffffff</color>
+    <color name="animalWordlistColor">#FFCC80</color>
+    <color name="profWordlistColor">#CAEFFF</color>
+    <color name="placesWordlistColor">#D36C94</color>
 <!--    <color name="darkTextColor">#0B344D</color>-->
     <color name="darkTextColor">#0a2f35</color>
 </resources>
