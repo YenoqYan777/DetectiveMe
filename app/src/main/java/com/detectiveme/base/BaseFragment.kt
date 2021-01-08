@@ -6,10 +6,14 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.detectiveme.DetectiveMeApplication
+import com.detectiveme.halper.LocaleHelper
 import com.detectiveme.util.NavigationCommand
 
 abstract class BaseFragment(layoutID: Int) : Fragment(layoutID) {
     abstract fun getViewModel(): BaseViewModel
+
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

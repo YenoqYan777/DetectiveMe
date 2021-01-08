@@ -14,20 +14,19 @@
         android:background="@color/mainDarkBckg"
         tools:context=".ui.selectType.SelectTypeFragment">
 
-
         <TextView
             android:id="@+id/wordListHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/choose"
             android:textAlignment="textStart"
             android:textColor="@color/darkTextColor"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/btnBackList"
+            app:layout_constraintEnd_toEndOf="@+id/wordListHeader2"
+            app:layout_constraintStart_toStartOf="@+id/wordListHeader2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
@@ -40,25 +39,28 @@
             android:textColor="@color/redColor"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/wordListHeader"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/wordListHeader" />
 
         <ImageButton
             android:id="@+id/btnBackList"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/ic_back"
-            android:padding="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/wordListHeader" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnRules"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/wordListHeader2">
@@ -67,95 +69,166 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <Button
+                <androidx.cardview.widget.CardView
                     android:id="@+id/btnTypeAnimals"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="64dp"
-                    android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/textColor"
-                    android:fontFamily="@font/heebo_extrabold"
-                    android:text="@string/animals"
-                    android:textAllCaps="false"
-                    android:textColor="@color/darkTextColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/btnTypePlaces"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_width="170dp"
+                    android:layout_height="220dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/textColor"
-                    android:fontFamily="@font/heebo_extrabold"
-                    android:text="@string/places"
-                    android:textAllCaps="false"
-                    android:textColor="@color/darkTextColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    android:backgroundTint="@color/animalWordlistColor"
+                    android:elevation="15dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnTypeProf" />
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <Button
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:id="@+id/animalWordlistImg"
+                            android:layout_width="150dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_wordlist_dog" />
+
+                        <TextView
+                            android:id="@+id/txtAnimalWordlist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/animals"
+                            android:textColor="@color/darkTextColor"
+                            android:textSize="19sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:id="@+id/btnTypeProf"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:backgroundTint="@color/textColor"
-                    android:fontFamily="@font/heebo_extrabold"
-                    android:text="@string/professions"
-                    android:textAllCaps="false"
-                    android:textColor="@color/darkTextColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnTypeAnimals" />
-
-
-                <Button
-                    android:id="@+id/btnRules"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="64dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_width="220dp"
+                    android:layout_height="240dp"
                     android:layout_marginBottom="16dp"
-                    android:backgroundTint="@color/redColor"
-                    android:fontFamily="serif"
-                    android:text="@string/rules"
-                    android:textAllCaps="false"
-                    android:textColor="@color/textColor"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:backgroundTint="@color/profWordlistColor"
+                    android:elevation="15dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="15dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btnTypePlaces" />
+                    app:layout_constraintEnd_toStartOf="@+id/btnTypePlaces"
+                    app:layout_constraintStart_toEndOf="@+id/btnTypeAnimals"
+                    app:layout_constraintTop_toTopOf="@+id/btnTypeAnimals">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:id="@+id/profWordlistImg"
+                            android:layout_width="150dp"
+                            android:layout_height="170dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_wordlist_prof" />
+
+                        <TextView
+                            android:id="@+id/txtProfWordlist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/professions"
+                            android:textAlignment="center"
+                            android:textColor="@color/darkTextColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnTypePlaces"
+                    android:layout_width="170dp"
+                    android:layout_height="220dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/placesWordlistColor"
+                    android:elevation="15dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btnTypeAnimals">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:id="@+id/placesWordlistImg"
+                            android:layout_width="150dp"
+                            android:layout_height="160dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_wordlist_places" />
+
+                        <TextView
+                            android:id="@+id/txtPlacesWordlist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/places"
+                            android:textColor="@color/textColor"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </ScrollView>
 
-
-        <include
-            android:id="@+id/progressBar"
-            layout="@layout/progress_bar"
-            android:visibility="gone"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@color/redColor"
+            android:padding="8dp"
+            android:text="@string/rules"
+            android:textAllCaps="false"
+            android:textColor="@color/textColor"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:cornerRadius="17dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

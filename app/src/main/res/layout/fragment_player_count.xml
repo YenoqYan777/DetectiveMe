@@ -300,7 +300,7 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="64dp"
                     android:layout_marginEnd="32dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/redColor"
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"

@@ -55,6 +55,11 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
     private lateinit var places: List<String>
 
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.retainInstance = true
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -64,7 +69,6 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
             txtRole.visibility = INVISIBLE
             btnSeeHide.text = resources.getString(R.string.show)
         }
-
         return binding.root
     }
 
@@ -88,6 +92,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
 
     }
 
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         LocaleHelper().setLocale(requireActivity(), lang)
@@ -103,6 +108,10 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
 
     }
 
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        onCreate(savedInstanceState)
+    }
     override fun getViewModel(): BaseViewModel = viewModel
 
     private fun initAd() {
