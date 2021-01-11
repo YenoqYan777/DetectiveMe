@@ -1,5 +1,7 @@
 package com.detectiveme.ui.selectLang
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
@@ -13,14 +15,24 @@ class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
     private lateinit var binding: FragmentSelectLangBinding
     private lateinit var viewModel: SelectLangViewModel
 
-
+    private val sharedPrefFile = "kotlinsharedpreference"
+    private val LANG_KEY = "lang"
+    private lateinit var sharedPreferences: SharedPreferences
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSelectLangBinding.bind(view)
-
+        initSharedPref()
         initViewModel()
         onLangSelectedListener()
     }
+
+    private fun initSharedPref() {
+        sharedPreferences = requireActivity().getSharedPreferences(
+            sharedPrefFile,
+            Context.MODE_PRIVATE
+        )
+    }
+
 
     private fun initViewModel() {
         viewModel = ViewModelProviders.of(this).get(SelectLangViewModel::class.java)
@@ -32,22 +44,33 @@ class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
     private fun onLangSelectedListener() {
         binding.apply {
             btnLangArm.setOnClickListener {
-                lang = "hy"
-                LocaleHelper().setLocale(requireActivity(), lang)
+                sharedPreferences.edit().putString(LANG_KEY, "hy").apply()
+                LocaleHelper().setLocale(
+                    requireContext(),
+                    sharedPreferences.getString(LANG_KEY, "en")!!
+                )
                 viewModel.navigate(
                     SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
                 )
             }
             btnLangRu.setOnClickListener {
-                lang = "ru"
-                LocaleHelper().setLocale(requireActivity(), lang)
+                sharedPreferences.edit().putString(LANG_KEY, "ru").apply()
+                LocaleHelper().setLocale(
+                    requireContext(),
+                    sharedPreferences.getString(LANG_KEY, "en")!!
+                )
+
                 viewModel.navigate(
                     SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
                 )
             }
             btnLangUs.setOnClickListener {
-                lang = "en"
-                LocaleHelper().setLocale(requireActivity(), lang)
+                sharedPreferences.edit().putString(LANG_KEY, "en").apply()
+                LocaleHelper().setLocale(
+                    requireContext(),
+                    sharedPreferences.getString(LANG_KEY, "en")!!
+                )
+
                 viewModel.navigate(
                     SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
                 )

@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.*
+import android.view.View.INVISIBLE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.detectiveme.R
@@ -22,6 +22,9 @@ import com.google.android.gms.ads.MobileAds
 import java.util.*
 
 class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
+    private val sharedPrefFile = "kotlinsharedpreference"
+    private val LANG_KEY = "lang"
+
     private lateinit var binding: FragmentRoleCheckerBinding
     private val viewModel: RoleCheckerViewModel by lazy {
         ViewModelProviders.of(this).get(RoleCheckerViewModel::class.java)
@@ -92,10 +95,14 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
 
     }
 
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        LocaleHelper().setLocale(requireActivity(), lang)
+        LocaleHelper().setLocale(
+            requireContext(),
+            requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+                .getString(LANG_KEY, "en")!!
+        )
+
         animals = requireContext().resources.getStringArray(R.array.animals).toList()
         profs = requireContext().resources.getStringArray(R.array.profs).toList()
         places = requireContext().resources.getStringArray(R.array.places).toList()
@@ -121,7 +128,6 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
     }
 
     private fun hideShowRole() {
-        binding.progressBar.visibility = GONE
         binding.btnSeeHide.setOnClickListener {
             if (isRoleVisible) {
                 roleIsVisible()
@@ -135,7 +141,6 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
         if (count > totalP) {
             if (isTimerStarted != null) {
                 if (isTimerStarted == true) {
-                    LocaleHelper().setLocale(requireActivity(), lang)
                     viewModel.navigateBack()
                 } else {
                     startTimer()

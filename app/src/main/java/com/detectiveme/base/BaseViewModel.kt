@@ -11,11 +11,17 @@ import com.detectiveme.util.NavigationCommand
 open class BaseViewModel(application: Application) : AndroidViewModel(application) {
     private val mNavigation = MutableLiveData<Event<NavigationCommand>>()
     val navigation: LiveData<Event<NavigationCommand>> = mNavigation
+//    private val _landData = MutableLiveData<String>("en")
+//    val langData : MutableLiveData<String> get() = _landData
 
     fun navigate(navDirections: NavDirections) {
         mNavigation.value =
             Event(NavigationCommand.To(navDirections))
     }
+//
+//    fun changeLang(lang: String){
+//        _landData.value = lang
+//    }
 
     fun navigateBack() {
         mNavigation.value =

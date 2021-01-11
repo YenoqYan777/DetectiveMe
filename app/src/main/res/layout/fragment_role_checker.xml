@@ -53,14 +53,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <include
-            android:id="@+id/progressBar"
-            layout="@layout/progress_bar"
-            android:visibility="visible"
-            ads:layout_constraintBottom_toBottomOf="parent"
-            ads:layout_constraintEnd_toEndOf="parent"
-            ads:layout_constraintStart_toStartOf="parent"
-            ads:layout_constraintTop_toTopOf="parent" />
+<!--        <include-->
+<!--            android:id="@+id/progressBar"-->
+<!--            layout="@layout/progress_bar"-->
+<!--            android:visibility="visible"-->
+<!--            ads:layout_constraintBottom_toBottomOf="parent"-->
+<!--            ads:layout_constraintEnd_toEndOf="parent"-->
+<!--            ads:layout_constraintStart_toStartOf="parent"-->
+<!--            ads:layout_constraintTop_toTopOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

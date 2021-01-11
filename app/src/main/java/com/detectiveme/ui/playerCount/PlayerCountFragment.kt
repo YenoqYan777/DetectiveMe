@@ -3,7 +3,6 @@ package com.detectiveme.ui.playerCount
 import android.content.Context
 import android.os.Bundle
 import android.view.View
-import android.view.View.GONE
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,6 +14,7 @@ import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentPlayerCountBinding
 import com.detectiveme.halper.LocaleHelper
 import kotlinx.android.synthetic.main.fragment_player_count.*
+import java.util.*
 
 
 class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
@@ -34,11 +34,6 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         DetectiveMeApplication().initAd(requireContext(), imgLoading, loadingBckg)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        LocaleHelper().setLocale(requireActivity(), lang)
-    }
-
     private fun initViewModel() {
         binding.viewModel = viewModel
         viewModel.totalPlayer.observe(viewLifecycleOwner, Observer {
@@ -53,9 +48,10 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         })
     }
 
+
+
     private fun onButtonsClickedListener() {
         binding.btnBack.setOnClickListener {
-            LocaleHelper().setLocale(requireActivity(), lang)
             viewModel.navigateBack()
         }
 

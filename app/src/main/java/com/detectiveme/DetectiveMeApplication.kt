@@ -2,21 +2,41 @@ package com.detectiveme
 
 import android.app.Application
 import android.content.Context
-import android.content.res.Configuration
+import android.content.SharedPreferences
 import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.ProgressBar
-import androidx.constraintlayout.widget.ConstraintLayout
+import com.detectiveme.halper.LocaleHelper
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.LoadAdError
-import kotlinx.android.synthetic.main.fragment_player_count.*
 
-class DetectiveMeApplication : Application(){
+class DetectiveMeApplication : Application() {
+
+    private val sharedPrefFile = "kotlinsharedpreference"
+    private val LANG_KEY = "lang"
+
+    override fun onCreate() {
+        super.onCreate()
+        val sharedPreferences: SharedPreferences = this.getSharedPreferences(
+            sharedPrefFile,
+            Context.MODE_PRIVATE
+        )
+        if (sharedPreferences.getString(LANG_KEY, "en") != null) {
+            LocaleHelper().setLocale(
+                applicationContext,
+                sharedPreferences.getString(LANG_KEY, "en")!!
+            )
+        } else {
+            LocaleHelper().setLocale(
+                applicationContext,
+                "en"
+            )
+        }
+    }
 
     fun initAd(context: Context, progressBar: View, bckgLoading: View) {
         val mInterstitialAd = InterstitialAd(context)
@@ -26,19 +46,21 @@ class DetectiveMeApplication : Application(){
         progressBar.startAnimation(pulse)
         progressBar.visibility = VISIBLE
         bckgLoading.visibility = VISIBLE
-        mInterstitialAd.adListener = object: AdListener() {
+        mInterstitialAd.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 super.onAdLoaded()
                 if (mInterstitialAd.isLoaded) {
                     mInterstitialAd.show()
                 }
             }
+
             override fun onAdFailedToLoad(p0: LoadAdError?) {
                 super.onAdFailedToLoad(p0)
                 progressBar.animation = null
                 progressBar.visibility = GONE
                 bckgLoading.visibility = GONE
             }
+
             override fun onAdClosed() {
                 super.onAdClosed()
                 progressBar.animation = null
