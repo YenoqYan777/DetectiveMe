@@ -9,23 +9,35 @@
         android:background="@color/mainDarkBckg"
         tools:context=".ui.roleChecker.RoleCheckerFragment">
 
-
-        <Button
-            android:id="@+id/btnSeeHide"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_detective_grass"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/btnSeeHide" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSeeHide"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginTop="32dp"
             android:backgroundTint="@color/redColor"
+            android:paddingLeft="35dp"
             android:paddingTop="10dp"
+            android:paddingRight="35dp"
             android:paddingBottom="10dp"
             android:text="@string/show"
             android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtRole" />
+            ads:cornerRadius="25dp"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/txtRole" />
 
         <TextView
             android:id="@+id/txtRole"
@@ -49,18 +61,9 @@
             android:layout_height="wrap_content"
             ads:adSize="BANNER"
             ads:adUnitId="@string/key_banner"
-            app:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-<!--        <include-->
-<!--            android:id="@+id/progressBar"-->
-<!--            layout="@layout/progress_bar"-->
-<!--            android:visibility="visible"-->
-<!--            ads:layout_constraintBottom_toBottomOf="parent"-->
-<!--            ads:layout_constraintEnd_toEndOf="parent"-->
-<!--            ads:layout_constraintStart_toStartOf="parent"-->
-<!--            ads:layout_constraintTop_toTopOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
