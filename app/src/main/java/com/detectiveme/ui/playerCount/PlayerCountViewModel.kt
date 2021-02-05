@@ -4,8 +4,15 @@ import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.detectiveme.base.BaseViewModel
+import com.detectiveme.ui.roleChecker.RoleCheckerViewModel
 
 class PlayerCountViewModel(application: Application) : BaseViewModel(application) {
+    companion object{
+        var activityOpenCount = 0
+    }
+    fun activityOpened(){
+        activityOpenCount++
+    }
     private val _totalPlayers = MutableLiveData<Int>(3)
     val totalPlayer: LiveData<Int>
         get() = _totalPlayers

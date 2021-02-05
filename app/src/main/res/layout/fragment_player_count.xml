@@ -81,9 +81,9 @@
                     android:clipToPadding="false"
                     android:divider="@android:color/transparent"
                     android:dividerHeight="0.0px"
-                    android:outlineSpotShadowColor="@android:color/white"
                     app:cardBackgroundColor="@android:color/white"
                     app:cardCornerRadius="15dp"
+                    app:cardElevation="15dp"
                     app:cardPreventCornerOverlap="false"
                     app:layout_constraintBottom_toTopOf="@+id/cvSpies"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -109,17 +109,16 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/btnAddTotal"
+                            android:id="@+id/btnMinusTotal"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
                             android:adjustViewBounds="true"
-                            android:background="@drawable/ic_plus"
+                            android:background="@drawable/ic_negative"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackgroundBorderless"
-                            android:onClick="@{() -> viewModel.updateTotalPlayers(true)}"
-                            app:layout_constraintBottom_toBottomOf="@+id/btnMinusTotal"
+                            app:layout_constraintBottom_toBottomOf="@+id/btnAddTotal"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtAlloverPlayers" />
 
@@ -137,13 +136,14 @@
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/btnMinusTotal"
+                            android:id="@+id/btnAddTotal"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="16dp"
-                            android:background="@drawable/ic_negative"
+                            android:background="@drawable/ic_plus"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
+                            android:onClick="@{() -> viewModel.updateTotalPlayers(true)}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtAlloverPlayers" />
@@ -159,6 +159,7 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="24dp"
                     app:cardCornerRadius="15dp"
+                    app:cardElevation="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cvTotal">
@@ -182,16 +183,15 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/btnAddFake"
+                            android:id="@+id/btnMinusFake"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
-                            android:background="@drawable/ic_plus"
+                            android:background="@drawable/ic_negative"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
-                            android:onClick="@{() -> viewModel.updateTotalSpies(true)}"
-                            app:layout_constraintBottom_toBottomOf="@+id/btnMinusFake"
+                            app:layout_constraintBottom_toBottomOf="@+id/btnAddFake"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtFakePlayers" />
 
@@ -209,13 +209,14 @@
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/btnMinusFake"
+                            android:id="@+id/btnAddFake"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="16dp"
-                            android:background="@drawable/ic_negative"
+                            android:background="@drawable/ic_plus"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
+                            android:onClick="@{() -> viewModel.updateTotalSpies(true)}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtFakePlayers" />
@@ -230,6 +231,7 @@
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="24dp"
                     app:cardCornerRadius="15dp"
+                    app:cardElevation="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cvSpies">
@@ -253,16 +255,15 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/btnAddMinute"
+                            android:id="@+id/btnMinusMinute"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="8dp"
-                            android:background="@drawable/ic_plus"
+                            android:background="@drawable/ic_negative"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
-                            android:onClick="@{() -> viewModel.updateTotalMins(true)}"
-                            app:layout_constraintBottom_toBottomOf="@+id/btnMinusMinute"
+                            app:layout_constraintBottom_toBottomOf="@+id/btnAddMinute"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtMinutes" />
 
@@ -280,14 +281,15 @@
                             app:layout_constraintStart_toStartOf="parent" />
 
                         <ImageButton
-                            android:id="@+id/btnMinusMinute"
+                            android:id="@+id/btnAddMinute"
                             android:layout_width="36dp"
                             android:layout_height="36dp"
                             android:layout_marginEnd="16dp"
-                            android:background="@drawable/ic_negative"
+                            android:background="@drawable/ic_plus"
                             android:elevation="10dp"
                             android:foreground="?attr/selectableItemBackground"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            android:onClick="@{() -> viewModel.updateTotalMins(true)}"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txtMinutes" />
                     </androidx.constraintlayout.widget.ConstraintLayout>

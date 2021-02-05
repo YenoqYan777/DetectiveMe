@@ -1,6 +1,7 @@
 package com.detectiveme.ui.roleChecker
 
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -57,9 +58,14 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
     private lateinit var profs: List<String>
     private lateinit var places: List<String>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        LocaleHelper().setLocale(
+            requireContext(),
+            requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+                .getString(LANG_KEY, "hy")!!
+        )
         this.retainInstance = true
     }
 
@@ -119,6 +125,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
         super.onViewStateRestored(savedInstanceState)
         onCreate(savedInstanceState)
     }
+
     override fun getViewModel(): BaseViewModel = viewModel
 
     private fun initAd() {
@@ -173,7 +180,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
                     normPlayerCount++
                 }
             } else if (fakeCount > fakeP) {
-                binding.txtRole.text =  wordToShow
+                binding.txtRole.text = wordToShow
             } else {
                 binding.txtRole.text = spy
             }
@@ -192,6 +199,7 @@ class RoleCheckerFragment : BaseFragment(R.layout.fragment_role_checker) {
                 val textToShowForTimer = "$minutes : $seconds"
                 binding.txtRole.text = textToShowForTimer
             }
+
             override fun onFinish() {
                 viewModel.navigateBack()
             }

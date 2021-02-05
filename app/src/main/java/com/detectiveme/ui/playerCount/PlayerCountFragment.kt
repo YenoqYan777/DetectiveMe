@@ -1,6 +1,7 @@
 package com.detectiveme.ui.playerCount
 
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -13,11 +14,14 @@ import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentPlayerCountBinding
 import com.detectiveme.halper.LocaleHelper
+import com.detectiveme.ui.playerCount.PlayerCountViewModel.Companion.activityOpenCount
 import kotlinx.android.synthetic.main.fragment_player_count.*
-import java.util.*
 
 
 class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
+    private val sharedPrefFile = "kotlinsharedpreference"
+    private val LANG_KEY = "lang"
+
     private lateinit var binding: FragmentPlayerCountBinding
     private val viewModel: PlayerCountViewModel by lazy {
         ViewModelProviders.of(this).get(PlayerCountViewModel::class.java)
@@ -26,12 +30,35 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
 
     override fun getViewModel(): BaseViewModel = viewModel
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        LocaleHelper().setLocale(
+            requireContext(),
+            requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+                .getString(LANG_KEY, "hy")!!
+        )
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentPlayerCountBinding.bind(view)
         onButtonsClickedListener()
         initViewModel()
-        DetectiveMeApplication().initAd(requireContext(), imgLoading, loadingBckg)
+
+        viewModel.activityOpened()
+        if (activityOpenCount % 4 == 0) {
+            DetectiveMeApplication().initAd(
+                requireContext(),
+                binding.imgLoading,
+                binding.loadingBckg
+            )
+        }
     }
 
     private fun initViewModel() {
@@ -47,7 +74,6 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
             numMinutes.text = it.toString()
         })
     }
-
 
 
     private fun onButtonsClickedListener() {

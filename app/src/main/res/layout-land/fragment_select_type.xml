@@ -18,12 +18,12 @@
             android:id="@+id/wordListHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-medium"
             android:text="@string/choose"
             android:textAlignment="textStart"
             android:textColor="@color/darkTextColor"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/wordListHeader2"
             app:layout_constraintStart_toStartOf="@+id/wordListHeader2"
@@ -37,7 +37,7 @@
             android:text="@string/word_list"
             android:textAlignment="textStart"
             android:textColor="@color/redColor"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,8 +45,8 @@
 
         <ImageButton
             android:id="@+id/btnBackList"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
             android:background="@android:color/transparent"
@@ -58,8 +58,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/btnRules"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +71,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnTypeAnimals"
-                    android:layout_width="170dp"
-                    android:layout_height="220dp"
+                    android:layout_width="140dp"
+                    android:layout_height="180dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
                     android:backgroundTint="@color/animalWordlistColor"
@@ -91,8 +91,8 @@
 
                         <ImageView
                             android:id="@+id/animalWordlistImg"
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
+                            android:layout_width="110dp"
+                            android:layout_height="120dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
                             android:src="@drawable/ic_wordlist_dog" />
@@ -122,8 +122,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnTypeProf"
-                    android:layout_width="220dp"
-                    android:layout_height="240dp"
+                    android:layout_width="180dp"
+                    android:layout_height="200dp"
                     android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/profWordlistColor"
                     android:elevation="15dp"
@@ -143,8 +143,8 @@
 
                         <ImageView
                             android:id="@+id/profWordlistImg"
-                            android:layout_width="150dp"
-                            android:layout_height="180dp"
+                            android:layout_width="110dp"
+                            android:layout_height="140dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
                             android:src="@drawable/ic_wordlist_prof" />
@@ -152,14 +152,14 @@
                         <TextView
                             android:id="@+id/txtProfWordlist"
                             android:layout_width="match_parent"
-                            android:layout_height="30dp"
+                            android:layout_height="25dp"
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginRight="8dp"
                             android:layout_marginBottom="8dp"
                             android:autoSizeMaxTextSize="100sp"
-                            android:autoSizeMinTextSize="12sp"
+                            android:autoSizeMinTextSize="5sp"
                             android:autoSizeStepGranularity="2sp"
                             android:autoSizeTextType="uniform"
                             android:text="@string/professions"
@@ -173,8 +173,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btnTypePlaces"
-                    android:layout_width="170dp"
-                    android:layout_height="220dp"
+                    android:layout_width="130dp"
+                    android:layout_height="180dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/placesWordlistColor"
                     android:elevation="15dp"
@@ -192,8 +192,8 @@
 
                         <ImageView
                             android:id="@+id/placesWordlistImg"
-                            android:layout_width="150dp"
-                            android:layout_height="160dp"
+                            android:layout_width="110dp"
+                            android:layout_height="120dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="12dp"
                             android:src="@drawable/ic_wordlist_places" />

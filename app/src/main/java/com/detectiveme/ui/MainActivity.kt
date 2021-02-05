@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
             sharedPrefFile,
             Context.MODE_PRIVATE
         )
-        if (sharedPreferences.getString(LANG_KEY, "en") != null) {
+        if (sharedPreferences.getString(LANG_KEY, "hy") != null) {
             LocaleHelper().setLocale(
                 this,
-                sharedPreferences.getString(LANG_KEY, "en")!!
+                sharedPreferences.getString(LANG_KEY, "hy")!!
             )
         } else{
             LocaleHelper().setLocale(
@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onRestart() {
-        LocaleHelper().setLocale(this, sharedPreferences.getString(LANG_KEY, "en")!!)
+        LocaleHelper().setLocale(this, sharedPreferences.getString(LANG_KEY, "hy")!!)
         super.onRestart()
     }
     override fun onResume() {
-        LocaleHelper().setLocale(this, sharedPreferences.getString(LANG_KEY, "en")!!)
+        LocaleHelper().setLocale(this, sharedPreferences.getString(LANG_KEY, "hy")!!)
         super.onResume()
     }
 

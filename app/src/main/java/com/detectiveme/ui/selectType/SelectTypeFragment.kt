@@ -1,6 +1,7 @@
 package com.detectiveme.ui.selectType
 
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +11,28 @@ import com.detectiveme.R
 import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectTypeBinding
+import com.detectiveme.halper.LocaleHelper
 
 
 class SelectTypeFragment : BaseFragment(R.layout.fragment_select_type) {
+    private val sharedPrefFile = "kotlinsharedpreference"
+    private val LANG_KEY = "lang"
+
     // Important modules
     private lateinit var binding: FragmentSelectTypeBinding
     private val viewModel: SelectTypeViewModel by lazy {
         ViewModelProviders.of(this).get(SelectTypeViewModel::class.java)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        LocaleHelper().setLocale(
+            requireContext(),
+            requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+                .getString(LANG_KEY, "hy")!!
+        )
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+
     }
 
     override fun onCreateView(

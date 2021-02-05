@@ -11,6 +11,10 @@ class RoleCheckerViewModel(application: Application) : BaseViewModel(application
     companion object{
         var wordToShow = ""
     }
+
+
+
+
     fun getRandomWordToShow(list: List<String>) {
         val random = Random()
         val ranNum: Int = random.nextInt(list.size)

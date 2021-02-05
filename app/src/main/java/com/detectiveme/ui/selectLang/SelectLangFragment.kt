@@ -2,6 +2,7 @@ package com.detectiveme.ui.selectLang
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
@@ -10,6 +11,7 @@ import com.detectiveme.base.BaseFragment
 import com.detectiveme.base.BaseViewModel
 import com.detectiveme.databinding.FragmentSelectLangBinding
 import com.detectiveme.halper.LocaleHelper
+import kotlinx.android.synthetic.main.fragment_select_lang.*
 
 class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
     private lateinit var binding: FragmentSelectLangBinding
@@ -18,6 +20,18 @@ class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
     private val sharedPrefFile = "kotlinsharedpreference"
     private val LANG_KEY = "lang"
     private lateinit var sharedPreferences: SharedPreferences
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        LocaleHelper().setLocale(
+            requireContext(),
+            requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
+                .getString(LANG_KEY, "hy")!!
+        )
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentSelectLangBinding.bind(view)
