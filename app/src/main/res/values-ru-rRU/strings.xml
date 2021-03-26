@@ -30,7 +30,7 @@
         <item>Динозавр </item>
         <item>Слон</item>
         <item>Пантера</item>
-        <item>Краб</item>:
+        <item>Краб</item>
         <item>Лев</item>
         <item>Лягушка</item>
         <item>Орангутанг</item>
@@ -65,6 +65,12 @@
         <item>Мамонт</item>
         <item>Страус</item>
         <item>Носорог</item>
+        <item>Норка</item>
+        <item>Муравей</item>
+        <item>Крокодил</item>
+        <item>Летучая мышь</item>
+        <item>Бабочка</item>
+        <item>Курица</item>
     </string-array>
 
     <string-array name="profs">
@@ -85,42 +91,58 @@
         <item>Парикмахер</item>
         <item>Фотограф</item>
         <item>Ученый</item>
-        <item> Танцовщица </item>
-        <item> Певец </item>
-        <item> Массажер </item>
-        <item> Клоун </item>
-        <item> Проститутка </item>
-        <item> Ювелир </item>
-        <item> Продавец </item>
-        <item> Тренер </item>
-        <item> Духовный </item>
-        <item> Блогеры </item>
-        <item> Медсестра </item>
-        <item> Винодел </item>
-        <item> Дизайнер </item>
-        <item> Дизайнер </item>
-        <item> Маникюрщица </item>
-        <item> Маркетолог </item>
-        <item> Юрист </item>
-        <item> Финансист </item>
-        <item> Психолог </item>
-        <item> Физик </item>
-        <item> Химик </item>
-        <item> Математик </item>
-        <item> Модель </item>
-        <item> Юморист </item>
-        <item> Բանոր </item>
-        <item> Кузнец </item>
-        <item> Футболист </item>
-        <item> Баскетболист </item>
-        <item> Актер </item>
-        <item> Маг </item>
-        <item> Танцовщица </item>
-        <item> Журналист </item>
-        <item> Ведущий </item>
-        <item> Футбольный комментатор </item>
+        <item>Танцовщица</item>
+        <item>Певец</item>
+        <item>Массажер</item>
+        <item>Клоун</item>
+        <item>Проститутка</item>
+        <item>Ювелир</item>
+        <item>Продавец</item>
+        <item>Тренер</item>
+        <item>Духовный</item>
+        <item>Блогеры</item>
+        <item>Медсестра</item>
+        <item>Винодел</item>
+        <item>Дизайнер</item>
+        <item>Дизайнер</item>
+        <item>Маникюрщица</item>
+        <item>Маркетолог</item>
+        <item>Юрист</item>
+        <item>Финансист</item>
+        <item>Психолог</item>
+        <item>Физик</item>
+        <item>Химик</item>
+        <item>Математик</item>
+        <item>Модель</item>
+        <item>Юморист</item>
+        <item>Юморист</item>
+        <item>Кузнец</item>
+        <item>Футболист</item>
+        <item>Баскетболист</item>
+        <item>Актер</item>
+        <item>Маг</item>
+        <item>Танцовщица</item>
+        <item>Журналист</item>
+        <item>Ведущий</item>
+        <item>Футбольный комментатор</item>
+        <item>Астронавт</item>
+        <item>Телохранитель</item>
+        <item>Юрист</item>
+        <item>Водитель такси</item>
+        <item>Няня</item>
+        <item>Уборщик</item>
+        <item>Уборщик</item>
+        <item>Садовник</item>
+        <item>Судья</item>
+        <item>Библиотекарь</item>
+        <item>Модель</item>
+        <item>Военный</item>
+        <item>Переводчик</item>
+        <item>Официант</item>
+        <item>Оператор</item>
+        <item>Директор</item>
     </string-array>
-    :
+
 
     <string-array name="places">
         <item> Церковь </item>
@@ -164,11 +186,11 @@
         <item> Университет </item>
         <item> Торговый центр </item>
         <item> Деревня </item>
-        <item> Город </item>:
-        <item> Автовокзал </item>:
-        <item> Стадион </item>:
-        <item> Париж </item>:
-        <item> Лондон </item>:
+        <item> Город </item>
+        <item> Автовокзал </item>
+        <item> Стадион </item>
+        <item> Париж </item>
+        <item> Лондон </item>
         <item> Нью-Йорк </item>
     </string-array>
     <string name="moreNumberErrorMessage">Число шпионов должно быть меньше чем число участников</string>

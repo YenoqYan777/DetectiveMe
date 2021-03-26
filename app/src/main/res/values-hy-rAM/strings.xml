@@ -66,6 +66,12 @@
         <item>Մամոնտ</item>
         <item>Ջայլամ</item>
         <item>Ռնգեղջուր</item>
+        <item>Կզաքիս</item>
+        <item>Մրջուն</item>
+        <item>Կոկորդիլոս</item>
+        <item>Չղջիկ</item>
+        <item>Թիթեռ</item>
+        <item>Ճուտ</item>
     </string-array>
 
     <string-array name="profs">
@@ -120,6 +126,22 @@
         <item>Լրագրող</item>
         <item>Հաղորդավար</item>
         <item>Ֆուտբոլային մեկնաբան</item>
+        <item>Տիեզերագնաց</item>
+        <item>Թիկնապահ</item>
+        <item>Փաստաբան</item>
+        <item>Տաքսու վարորդ</item>
+        <item>Դայակ</item>
+        <item>Մաքրոուհի</item>
+        <item>Հավաքարար</item>
+        <item>Այգեպան</item>
+        <item>Դատավոր</item>
+        <item>Գրադարանավարուհի</item>
+        <item>Մոդել</item>
+        <item>Զինվորական</item>
+        <item>Թարգմանիչ</item>
+        <item>Մատուցող</item>
+        <item>Օպերատոր</item>
+        <item>Ռեժիսոր</item>
     </string-array>
 
     <string-array name="places">
