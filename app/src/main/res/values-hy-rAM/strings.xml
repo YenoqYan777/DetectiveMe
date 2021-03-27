@@ -142,6 +142,9 @@
         <item>Մատուցող</item>
         <item>Օպերատոր</item>
         <item>Ռեժիսոր</item>
+        <item>Օդերևութաբան</item>
+        <item>Տնտեսագետ</item>
+        <item>Առաքիչ</item>
     </string-array>
 
     <string-array name="places">

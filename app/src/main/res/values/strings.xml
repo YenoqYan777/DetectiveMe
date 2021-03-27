@@ -152,6 +152,9 @@
         <item>Waiter</item>
         <item>Operator</item>
         <item>Director</item>
+        <item>Meteorologist</item>
+        <item>Economist</item>
+        <item>Shipper</item>
     </string-array>
 
 

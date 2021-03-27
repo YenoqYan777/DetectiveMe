@@ -6,7 +6,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: "androidx.navigation.safeargs"
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -18,9 +18,9 @@ android {
     defaultConfig {
         applicationId "com.detectiveme"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 14
-        versionName "4.1"
+        versionName "4.1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,7 +38,7 @@ android {
 }
 def versions = [
         rxKotlin : "2.2.0",
-        rxJava   : "2.2.2",
+        rxJava   : "2.2.9",
         rxAndroid: "2.1.1",
         rxBinding: "2.2.0"
 ]
@@ -49,8 +49,8 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -62,27 +62,27 @@ dependencies {
     //ViewModel
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation "android.arch.lifecycle:viewmodel:1.1.1"
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
 
     //Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
 
     // Material design
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
 
     //admobs
-    implementation 'com.google.android.gms:play-services-ads:19.6.0'
+    implementation 'com.google.android.gms:play-services-ads:19.8.0'
 
     //Firebase
-    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
 
     // Add the Firebase Crashlytics SDK.
-    implementation 'com.google.firebase:firebase-analytics-ktx:18.0.0'
-    implementation 'com.google.firebase:firebase-crashlytics:17.3.0'
+    implementation 'com.google.firebase:firebase-analytics-ktx:18.0.2'
+    implementation 'com.google.firebase:firebase-crashlytics:17.4.1'
     // Add the Firebase SDK for Google Analytics
-    implementation 'com.google.firebase:firebase-analytics:18.0.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.2'
 //RxJava
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rxAndroid}"
     implementation "io.reactivex.rxjava2:rxjava:${versions.rxJava}"
