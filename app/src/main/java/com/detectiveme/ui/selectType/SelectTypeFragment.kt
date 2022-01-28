@@ -29,7 +29,7 @@ class SelectTypeFragment : BaseFragment(R.layout.fragment_select_type) {
         LocaleHelper().setLocale(
             requireContext(),
             requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-                .getString(LANG_KEY, "hy")!!
+                .getString(LANG_KEY, "en")!!
         )
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 

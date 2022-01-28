@@ -35,7 +35,7 @@ class PlayerCountFragment : BaseFragment(R.layout.fragment_player_count) {
         LocaleHelper().setLocale(
             requireContext(),
             requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-                .getString(LANG_KEY, "hy")!!
+                .getString(LANG_KEY, "en")!!
         )
 
     }

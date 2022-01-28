@@ -7,6 +7,7 @@
     <string name="continue_arm" translatable="false">Շարունակել Հայերեն</string>
     <string name="continue_ru" translatable="false">Продолжить на Русском</string>
     <string name="continue_us" translatable="false">Continue in English</string>
+    <string name="continue_es" translatable="false">Continuar en Español</string>
     <string name="professions">Professions</string>
     <string name="places">Places</string>
     <string name="animals">Animals</string>

@@ -26,7 +26,7 @@ class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
         LocaleHelper().setLocale(
             requireContext(),
             requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-                .getString(LANG_KEY, "hy")!!
+                .getString(LANG_KEY, "en")!!
         )
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
@@ -80,6 +80,17 @@ class SelectLangFragment : BaseFragment(R.layout.fragment_select_lang) {
             }
             btnLangUs.setOnClickListener {
                 sharedPreferences.edit().putString(LANG_KEY, "en").apply()
+                LocaleHelper().setLocale(
+                    requireContext(),
+                    sharedPreferences.getString(LANG_KEY, "en")!!
+                )
+
+                viewModel.navigate(
+                    SelectLangFragmentDirections.actionSelectLangFragmentToSelectTypeFragment()
+                )
+            }
+            btnLangEs.setOnClickListener {
+                sharedPreferences.edit().putString(LANG_KEY, "es").apply()
                 LocaleHelper().setLocale(
                     requireContext(),
                     sharedPreferences.getString(LANG_KEY, "en")!!

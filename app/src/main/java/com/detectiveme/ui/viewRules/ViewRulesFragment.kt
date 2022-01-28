@@ -32,7 +32,7 @@ class ViewRulesFragment : BaseFragment(R.layout.fragment_view_rules) {
         LocaleHelper().setLocale(
             requireContext(),
             requireActivity().getSharedPreferences(sharedPrefFile, Context.MODE_PRIVATE)
-                .getString(LANG_KEY, "hy")!!
+                .getString(LANG_KEY, "en")!!
         )
         requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
